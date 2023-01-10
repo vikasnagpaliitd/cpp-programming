@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Normal iterators
 #include <iostream>
 #include <vector>

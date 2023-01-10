@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Default Constructor
 #include <iostream>
 using namespace std;

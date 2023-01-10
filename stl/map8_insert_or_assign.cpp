@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Demo : insert_or_assign() // C++17
 #include <iostream>
 #include <map>

@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : static function
  
 #include <iostream>

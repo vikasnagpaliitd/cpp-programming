@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Make data private
 #include <iostream>
 using namespace std;

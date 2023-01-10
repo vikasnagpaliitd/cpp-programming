@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //My Stack : Gave default value for max_stack_len
 #include <iostream>
 using namespace std;

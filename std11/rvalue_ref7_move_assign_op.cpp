@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Point : Move assignment operator
 #include <iostream>
 #include <cstring>

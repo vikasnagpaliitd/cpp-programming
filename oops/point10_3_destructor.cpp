@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Destructor
 #include <iostream>
 #include <cstring> // Note:for C functions related to string processing

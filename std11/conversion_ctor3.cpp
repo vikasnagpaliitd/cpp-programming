@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Conversion ctor can have other args having default values
 // After std11, conversion constructor can also convert from initializer list
 #include <iostream>

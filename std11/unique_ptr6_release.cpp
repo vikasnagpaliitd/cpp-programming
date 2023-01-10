@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // release()
 #include <iostream>
 #include <memory>

@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // get() : get the raw pointer
 #include <iostream>
 #include <memory>

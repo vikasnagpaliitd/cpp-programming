@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Hybrid inherit. Common base class. diamon problem
 #include <iostream>
 using namespace std;

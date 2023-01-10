@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //My Stack
 #include <iostream>
 using namespace std;

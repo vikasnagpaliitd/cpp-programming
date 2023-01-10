@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : reusing base class function in derived class, Order of constructor, Order of destructor
 #include <iostream>
 using namespace std;

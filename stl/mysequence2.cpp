@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 #include <iostream>
 #include <assert.h>
 using namespace std;

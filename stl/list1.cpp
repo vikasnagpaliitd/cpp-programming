@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 #include <iostream>
 #include <list>
 using namespace std;

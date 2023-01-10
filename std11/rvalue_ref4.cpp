@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //r-value passed to a function behaves as l-value in that function
 #include <iostream>
 using namespace std;

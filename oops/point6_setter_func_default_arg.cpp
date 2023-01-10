@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Setter function, default parameters
 #include <iostream>
 using namespace std;

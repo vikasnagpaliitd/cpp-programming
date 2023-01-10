@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // trying to throw local object
 #include <iostream>
 #include <exception>

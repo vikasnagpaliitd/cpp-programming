@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Defining function outside class (In big projects, we will need .h and .cpp separate)
 #include <iostream>
 using namespace std;

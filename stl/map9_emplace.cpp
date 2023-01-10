@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Demo : emplace() // like insert and not insert_or_assign
 #include <iostream>
 #include <map>

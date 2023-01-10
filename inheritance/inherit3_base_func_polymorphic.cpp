@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Virtual keyword, Polymorhpism, run time binding
 #include <iostream>
 using namespace std;

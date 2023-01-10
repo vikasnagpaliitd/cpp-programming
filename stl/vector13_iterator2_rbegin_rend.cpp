@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Reverse iterators
 #include <iostream>
 #include <vector>

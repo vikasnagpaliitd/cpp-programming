@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // References: Reference to const
 #include <iostream>
 using namespace std;

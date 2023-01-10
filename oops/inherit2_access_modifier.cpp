@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Line inherits from Shape. Access Modifiers
  
 #include <iostream>

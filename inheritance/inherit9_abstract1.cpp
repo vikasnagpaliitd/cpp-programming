@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Shape is base class. Line and Rectangle inherit from it
  
 #include <iostream>

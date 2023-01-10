@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Returning objects from functions : by value, by reference, by const reference, by pointer
 #include <iostream>
 using namespace std;

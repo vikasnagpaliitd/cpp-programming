@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Hybrid inherit. Common base class. diamond problem. Virtual base class solution
 #include <iostream>
 using namespace std;

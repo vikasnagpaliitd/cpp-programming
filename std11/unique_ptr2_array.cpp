@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Allocation of array
 #include <iostream>
 #include <memory>

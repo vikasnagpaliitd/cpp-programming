@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Multiple inheritance from two base classses having same named functions/data
 #include <iostream>
 using namespace std;

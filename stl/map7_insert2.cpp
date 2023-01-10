@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Demo : insert() : overload 6
 #include <iostream>
 #include <map>

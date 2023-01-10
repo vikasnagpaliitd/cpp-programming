@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Can modify the temporary, unless dealing with const references.
 #include <iostream>
 using namespace std;

@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Line inherits from Shape.
 // Construction: Base then member then class
 // Destruction: class then member then Base

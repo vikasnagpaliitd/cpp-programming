@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Demo : empty(), size(), max_size()
 #include <iostream>
 #include <map>

@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // User Defined Exception
 #include <iostream>
 #include <exception>

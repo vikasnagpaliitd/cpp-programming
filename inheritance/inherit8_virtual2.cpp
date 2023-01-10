@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Virtual destructor
 #include <iostream>
 using namespace std;

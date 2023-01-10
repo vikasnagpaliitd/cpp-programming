@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Bidirectional iterator
 #include <iostream>
 #include <list>

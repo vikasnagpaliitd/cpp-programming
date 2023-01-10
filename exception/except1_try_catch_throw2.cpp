@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Nested try-catch
 #include <iostream>
 #include <stdexcept> // Note: defines standard exceptions

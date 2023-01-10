@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Defining - operator using friend
 #include <iostream>
 using namespace std;

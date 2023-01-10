@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : const or reference member data
 #include <iostream>
 using namespace std;

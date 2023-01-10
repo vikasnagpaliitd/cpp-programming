@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //My Stack : gave default value for T too
 #include <iostream>
 using namespace std;

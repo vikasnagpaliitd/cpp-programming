@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // does order of catch clauses matter?
 #include <iostream>
 #include <exception>

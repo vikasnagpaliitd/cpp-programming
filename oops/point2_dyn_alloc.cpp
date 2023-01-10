@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : dynamic allocation of object
 #include <iostream>
 using namespace std;

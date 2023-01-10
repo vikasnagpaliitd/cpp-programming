@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Point : Move constructor 
 // Note: please compile with -fno-elide-constructors so that compiler does not optimize copy
 #include <iostream>

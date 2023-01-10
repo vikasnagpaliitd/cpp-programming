@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // References: Reassigning reference changes the value, and not the reference itself.
 #include <iostream>
 using namespace std;

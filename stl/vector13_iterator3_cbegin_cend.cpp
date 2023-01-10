@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Const iterators
 #include <iostream>
 #include <vector>

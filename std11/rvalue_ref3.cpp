@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //overloading based on rvalue ref vs lvalue ref 
 #include <iostream>
 using namespace std;

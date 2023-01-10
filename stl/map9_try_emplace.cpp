@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Demo : try_try_emplace()
 #include <iostream>
 #include <map>

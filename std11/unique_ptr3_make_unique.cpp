@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // make_unique (C++ 14 onwards), Move constructor, Move assignment operator
 #include <iostream>
 #include <memory>

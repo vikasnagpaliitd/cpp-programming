@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Removing base class function in derived class (by making function private)
 #include <iostream>
 using namespace std;

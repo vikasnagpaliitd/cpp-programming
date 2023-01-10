@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : constructor, concept of namespace, use of "using namespace"
 #include <iostream>
 using namespace std;

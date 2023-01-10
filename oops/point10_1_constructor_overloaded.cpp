@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Overloaded constructors
 #include <iostream>
 using namespace std;

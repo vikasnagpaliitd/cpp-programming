@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Added IntInputError and StringInputError, storing more information about the error
 #include <iostream>
 #include <exception>

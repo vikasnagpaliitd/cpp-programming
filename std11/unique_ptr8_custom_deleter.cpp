@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // can we pass unique pointer to function
 #include <iostream>
 #include <memory>

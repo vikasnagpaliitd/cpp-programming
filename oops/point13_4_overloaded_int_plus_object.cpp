@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : a) using constructor for typecast from int to object
 //				b) typecasting object to int 
 #include <iostream>

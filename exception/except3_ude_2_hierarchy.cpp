@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Hierarchy : ProcessingError and InputError inherit from ApplicationError
 #include <iostream>
 #include <exception>

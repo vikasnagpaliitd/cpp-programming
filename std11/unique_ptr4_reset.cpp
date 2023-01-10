@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Resetting unique pointer to  point somewhere else
 #include <iostream>
 #include <memory>

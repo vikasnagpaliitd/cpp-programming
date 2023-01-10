@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 //Demonstrates : Copy constructor (Shallow copy : buggy)
 #include <iostream>
 #include <cstring>

@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // Partial speciailization
 #include <iostream>
 using namespace std;

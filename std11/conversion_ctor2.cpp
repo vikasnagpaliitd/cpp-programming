@@ -1,4 +1,3 @@
-// Copyright: Vikas Nagpal (Anuttara Learning)
 // explcit keyword
 #include <iostream>
 using namespace std;
