@@ -1,3 +1,4 @@
+// sizeof 2D array, sizeof row
 #include <iostream>
 using namespace std;
 
