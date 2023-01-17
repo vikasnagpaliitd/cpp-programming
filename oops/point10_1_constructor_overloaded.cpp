@@ -1,6 +1,7 @@
 //Demonstrates : Overloaded constructors
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
@@ -9,7 +10,6 @@ class Point
 
     public:
 
-	 
     // Ques: Can we achieve below three effects by using single constructor?
     Point(int ax, int ay)
     {
@@ -30,7 +30,6 @@ class Point
     }
 
 
-
     void display(); 
 	void display(string name);  
 	
@@ -40,8 +39,6 @@ class Point
 		this->x = x;
 		this->y = y;
 	}
-
-
 };
 
 //display with no argument
@@ -66,9 +63,9 @@ int main()
 	Point o2(10); 
 	Point o3; 
 
-	
     o1.display("o1(10,11)");
 	o2.display("o2(10)");
     o3.display("o3()");
+
     return 0;
 }

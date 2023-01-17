@@ -1,6 +1,7 @@
 //Demonstrates : Default Constructor
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
@@ -9,15 +10,14 @@ class Point
 
     public:
 
-	// Note: if we dont provide a any constructor, compiler provides a default constructor. 
-
+	// Note: if we dont provide a any constructor, compiler provides a default constructor.
+    // Default constuctor does default initialization of members
+    // i.e. calling defult constructor for nested objects. Doing nothing for int. etc. 
     Point(int ax=5, int ay=10)
     {
         x = ax;
         y = ay;
     }
-
-
 
     void display(); 
 	void display(string name);  
@@ -28,8 +28,6 @@ class Point
 		this->x = x;
 		this->y = y;
 	}
-
-
 };
 
 //display with no argument
@@ -46,7 +44,6 @@ void Point::display(string name)
     cout << name << ":" << "x = " << x << endl;
     cout << name << ":" << "y = " << y << endl;
 }
-
 
 int main()
 {

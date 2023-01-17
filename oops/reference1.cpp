@@ -21,7 +21,6 @@ int main()
     cout << "vRef = " << vRef << endl;
     cout << "&nValue = " << &nValue << endl;
     cout << "&vRef = " << &vRef << endl;
-    return 0;    
 
-
+    return 0;
 }

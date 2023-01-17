@@ -1,6 +1,8 @@
-//Demonstrates : Reference to const object
+//Demonstrates : One can mark a method 'const' indicating that it can be 
+// safely called on const objects or on const references.
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
@@ -16,7 +18,8 @@ class Point
     }
 
     void display(); 
-	void display (string name) ;  
+    void display (string name);
+	//void display (string name) const;  
 	
 	// Set Values
 	void set_values(int x=10, int y=20)
@@ -24,8 +27,6 @@ class Point
 		this->x = x;
 		this->y = y;
 	}
-
-
 };
 
 //display with no argument
@@ -36,14 +37,14 @@ void Point::display()
 }
 
 //display with name argument
-void Point::display (string name) 
+//void Point::display (string name) const
+void Point::display (string name)
 {
 	
     cout << name << ":" << "x = " << x << endl;
     cout << name << ":" << "y = " << y << endl;
 	
 }
-
 
 int main()
 {
@@ -53,7 +54,7 @@ int main()
 	o1.display("o1 values");
 	r1.display("r1 values"); // Ques: why it gives an error?
 	
-	//Ques: how to inform compiler that a function is safe to be called on const objects?
+	// Ques: how to inform compiler that a function is safe to be called on const objects?
 	// Ques: what if after making such commitment, the function  tries to modify object?
 	// Ques: how do constant objects behave? Which member functions are allowed to be callled, and which not.
     return 0;

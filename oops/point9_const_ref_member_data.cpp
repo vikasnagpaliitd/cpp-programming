@@ -1,18 +1,19 @@
 //Demonstrates : const or reference member data
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
 		const char * const label; // const
         int x;
         int y;
-		int &ref;// Reference
+		int &ref; // Reference
 
     public:
 
 	// Note: Member initialization list : Const & reference must be put in initializer list
-	//Ques: can we put ax and ay too in initializer list?
+	// Ques: can we put ax and ay too in initializer list?
     Point(int ax, int ay,  const char *alabel, int val) : label(alabel), ref(val)
     {
         x = ax;
@@ -31,8 +32,6 @@ class Point
 		this->y = y;
 		//this->label = "new label"; // Ques:will it work?
 	}
-
-
 };
 
 //display with no argument
@@ -52,13 +51,11 @@ void Point::display (string name)
 	
 }
 
-
 int main()
 {
 	int abc=100;
     Point o1(100, 200, "Delhi", abc);
 	
-		
 	o1.display("o1 values");
 
     return 0;

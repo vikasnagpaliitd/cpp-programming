@@ -1,6 +1,7 @@
 //Demonstrates : Object reference
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
@@ -24,8 +25,6 @@ class Point
 		this->x = x;
 		this->y = y;
 	}
-
-
 };
 
 //display with no argument
@@ -42,7 +41,6 @@ void Point::display(string name)
     cout << name << ":" << "x = " << x << endl;
     cout << name << ":" << "y = " << y << endl;
 }
-
 
 int main()
 {

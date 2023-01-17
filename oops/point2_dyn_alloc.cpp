@@ -1,6 +1,7 @@
 //Demonstrates : dynamic allocation of object
 #include <iostream>
 using namespace std;
+
 class Point
 {
     public:
@@ -18,7 +19,6 @@ class Point
         cout << "x = " << x << endl;
         cout << "y = " << y << endl;
     }
-
 };
 
 int main()
@@ -27,7 +27,7 @@ int main()
 
     p1 = new Point(11, 21);
 
-    p1->display(); // Notice -> instead of .
+    p1->display(); // Notice use of                                                  -> instead of .
 
     delete p1; // Notice the necessity of freeing resources
 

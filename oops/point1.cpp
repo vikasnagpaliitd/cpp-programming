@@ -1,6 +1,7 @@
 //Demonstrates : constructor, concept of namespace, use of "using namespace"
 #include <iostream>
 using namespace std;
+
 class Point
 {
     public:
@@ -19,7 +20,6 @@ class Point
         cout << "x = " << x << endl;
         cout << "y = " << y << endl;
     }
-
 };
 
 int main()

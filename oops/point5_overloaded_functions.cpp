@@ -1,6 +1,7 @@
 //Demonstrates : Overloaded function
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
@@ -17,8 +18,6 @@ class Point
 
     void display(); 
 	void display(string name);  // Note: pre-built class string (Ques: should we prefer string or char* ? )
-
-
 };
 
 //display with no argument
@@ -35,7 +34,6 @@ void Point::display(string name)
     cout << name << ":" << "x = " << x << endl;
     cout << name << ":" << "y = " << y << endl;
 }
-
 
 int main()
 {

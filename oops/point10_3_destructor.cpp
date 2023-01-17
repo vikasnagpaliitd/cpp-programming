@@ -1,6 +1,7 @@
 //Demonstrates : Destructor
 #include <iostream>
 #include <cstring> // Note:for C functions related to string processing
+
 using namespace std;
 class Point
 {
@@ -9,20 +10,18 @@ class Point
         int y;
 		char *label; // added new field to store label
 		//Ques: what is better to use? string or char*? 
-    public:
 
-	 
+    public:
 
     Point(const char *alabel, int ax=5, int ay=10)
     {
 		cout << "Parameterized constructor called" << endl;
 		label = new char[strlen(alabel) + 1];
-		strcpy(label,alabel);
+		strcpy(label, alabel);
 		
         x = ax;
         y = ay;
     }
-
 
 
     void display(); 
@@ -40,8 +39,6 @@ class Point
 		cout << "Destructor called on label:" << label << endl;
 		delete [] label;
 	}
-
-
 };
 
 //display with no argument
@@ -54,7 +51,6 @@ void Point::display()
 //display with name argument
 void Point::display(string name)
 {
-	
     cout << name << ":" << "x = " << x << endl;
     cout << name << ":" << "y = " << y << endl;
 }

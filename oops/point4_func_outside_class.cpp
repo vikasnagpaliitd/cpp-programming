@@ -1,6 +1,8 @@
-//Demonstrates : Defining function outside class (In big projects, we will need .h and .cpp separate)
+//Demonstrates : Defining function outside class 
+// (In multi file projects, we will need .h and .cpp separate)
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
@@ -16,11 +18,9 @@ class Point
     }
 
     void display(); // declaration
-
-
 };
 
-//Function defined outside class. Its still a class member
+//Function defined outside class. It is still a class member.
 void Point::display()
 {
     cout << "x = " << x << endl;
