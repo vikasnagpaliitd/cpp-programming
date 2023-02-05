@@ -1,15 +1,14 @@
 //Demonstrates : Returning objects from functions : by value, by reference, by const reference, by pointer
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
         int x;
         int y;
 
-
     public:
-
 
     Point(int ax=0, int ay=0)
     {
@@ -24,8 +23,6 @@ class Point
 		x = obj.x;
 		y = obj.y;
 	}
-	
- 
 
 
     void display() const; 
@@ -42,8 +39,6 @@ class Point
 	{
 		cout << "Destructor called" << endl;
 	}
-
-
 };
 
 //display with no argument
@@ -56,7 +51,6 @@ void Point::display() const
 //display with name argument
 void Point::display(string name) const
 {
-	
     cout << name << ":" << "x = " << x << endl;
     cout << name << ":" << "y = " << y << endl;
 }
@@ -66,7 +60,8 @@ Point do_something()
 //Point* do_something()
 {
 	cout << "do_something: called" << endl;
-	Point local(100,200);
+	Point local(100,200); // Ques : can it be correct to return local variable's pointer or reference?
+                          // Ques : when can it be correct to return a pointer/reference?
 	local.display("local in do_something");
 	return local;
 }
@@ -74,10 +69,10 @@ Point do_something()
 
 int main()
 {
-    //Point o1(10,11); 
-
 	Point obj = do_something();
 	obj.display("obj in main");
+
+    //do_something().display();
 
     return 0;
 }

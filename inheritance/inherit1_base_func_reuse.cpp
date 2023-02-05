@@ -1,4 +1,4 @@
-//Demonstrates : reusing base class function in derived class, Order of constructor, Order of destructor
+//Demonstrates : reusing base class function in derived class, Order of constructors and destructors
 #include <iostream>
 using namespace std;
 
@@ -36,6 +36,7 @@ class Derived: public Base
 			cout << "Derived destructor called" << endl;
 		}
 };
+
 int main()
 {
     Base base(5);
@@ -43,6 +44,7 @@ int main()
 
 	Derived derived(7);
     derived.identify();	// I am Base
+    cout << "----------------------------" << endl;
 	return 0;
 }
 

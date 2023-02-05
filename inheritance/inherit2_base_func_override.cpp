@@ -33,11 +33,12 @@ class Derived: public Base
 		{
 			//cout << "Derived destructor called" << endl;
 		}
-	    void identify()
+	    void identify() // Derived class redefines this function
 		{ 
 			cout << "I am Derived\n";
 		}
 };
+
 int main()
 {
     Base base(5);

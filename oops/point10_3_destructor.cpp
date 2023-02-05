@@ -1,6 +1,6 @@
 //Demonstrates : Destructor
 #include <iostream>
-#include <cstring> // Note:for C functions related to string processing
+#include <cstring>
 
 using namespace std;
 class Point
@@ -9,7 +9,6 @@ class Point
         int x;
         int y;
 		char *label; // added new field to store label
-		//Ques: what is better to use? string or char*? 
 
     public:
 
@@ -23,9 +22,21 @@ class Point
         y = ay;
     }
 
+    Point(const Point& obj)
+    {
+        cout << "Copy constructor called" << endl;
+        label = new char[strlen(obj.label) + 1];
+        strcpy(label,obj.label); // Deep copy
 
-    void display(); 
-	void display(string name);  
+        x = obj.x;
+        y = obj.y;
+
+    }
+
+
+
+    void display() const;
+	void display(string name) const;  
 	
 	// Set values
 	void set_values(int x=10, int y=20)
@@ -42,17 +53,25 @@ class Point
 };
 
 //display with no argument
-void Point::display()
+void Point::display() const
 {
     cout << "x = " << x << endl;
     cout << "y = " << y << endl;
 }
 
 //display with name argument
-void Point::display(string name)
+void Point::display(string name) const
 {
     cout << name << ":" << "x = " << x << endl;
     cout << name << ":" << "y = " << y << endl;
+}
+
+//void do_something(const Point& p)
+//void do_something(Point& p)
+void do_something(Point p)
+//void do_something(Point* ptr)
+{
+    p.display("arg p");
 }
 
 
@@ -68,6 +87,11 @@ int main()
 	delete p1;
 	
 	cout << "Above destructor was called at time of delete" << endl;
+
+    do_something(o1);
+
+	cout << "do_something() has returned" << endl;
+
 
     return 0;
 }

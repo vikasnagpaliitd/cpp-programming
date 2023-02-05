@@ -23,18 +23,19 @@ class Point
         y = ay;
     }
 	
+    //Copy constructor
 	Point(const Point& obj)
 	{
 		cout << "Copy constructor called" << endl;
 		//label = new char[strlen(obj.label) + 1]; // Deep copy
 		//strcpy(label,obj.label);
-		label = obj.label; // Ques: do you see any issue given that destructor is freeing the memory?
+		label = obj.label; // Shallow copy
+        // Ques: do you see any issue, given that destructor is freeing the memory?
+        //   Also, what if one object changes content of label (dynamically allocated ) array?
 		
         x = obj.x;
         y = obj.y;
-
 	}
-
 
 
     void display(); 

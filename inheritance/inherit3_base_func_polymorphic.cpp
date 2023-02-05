@@ -1,4 +1,4 @@
-//Demonstrates : Virtual keyword, Polymorhpism, run time binding
+//Demonstrates : Virtual keyword, Polymorhpism, run time function call binding
 #include <iostream>
 using namespace std;
 
@@ -33,11 +33,13 @@ class Derived: public Base
 		{
 			//cout << "Derived destructor called" << endl;
 		}
-	    virtual void identify()
+	    // Marking virtual here is optional. Once marked virtual in base, it is automatically virtual here
+	    virtual void identify() 
 		{ 
 			cout << "I am Derived\n";
 		}
 };
+
 int main()
 {
     Base base(5);

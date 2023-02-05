@@ -1,17 +1,17 @@
-//Demonstrates : a) using constructor for typecast from int to object
+//Demonstrates : a) using constructor to typecast from int to object
 //				b) typecasting object to int 
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
         int x;
         int y;
 
-
     public:
 
-
+    // Note : below constructor can be used to convert int to Point
     Point(int ax=0, int ay=0)
     {
 		cout << "Parameterized constructor called" << endl;
@@ -26,24 +26,12 @@ class Point
 		y = obj.y;
 	}
 	
-	//Defining + operator using member function
-	
 	Point operator+(const Point& other) const
 	{
-		return Point(this->x + other.x, 
-			this->y + other.y);
-		
+		cout << "Member Binary operator + invoked" << endl;
+		return Point(this->x + other.x, this->y + other.y);
 	}
 	
-	Point operator+(int other) const
-	{
-		return Point(this->x + other, 
-			this->y);
-		
-	}
-	
-
-
     void display(); 
 	void display(string name);  
 	
@@ -53,22 +41,26 @@ class Point
 		this->x = x;
 		this->y = y;
 	}
-	
+
+#if 0
 	//Typecasting object to integer (Note: we dont give return type)
 	operator int() const{
 		return this->x;
 	}
+#endif
 
     //friend function
-	friend Point operator-(const Point& first, const Point& second);
+	friend Point operator+(int val, const Point& obj);
 
 };
 
-Point operator-(const Point& first, const Point& second)
+#if 0
+Point operator+(int val, const Point& obj)
 {
-	return Point(first.x - second.x,
-		first.y - second.y);
+    cout << "friend operator+ invoked" << endl;
+	return Point(val + obj.x, obj.y);
 }
+#endif
 
 //display with no argument
 void Point::display()
@@ -89,19 +81,18 @@ void Point::display(string name)
 int main()
 {
     Point o1(10,11); 
-	//Point o2(20,22);
 
-	Point o3 = (Point)100+o1;
+	//Point o2 = o1+100;
+	//Point o2 = 100+o1;
+	Point o2 = (Point)100+o1;
+	//Point o2 = Point(100)+o1;
 	
 	//Ques: how to enable 5+o1 calculation?
 	
-
-	
     o1.display("o1(10,11)");
-	//o2.display("o2(20,22)");
-	o3.display("o3=100+o1");
+	o2.display("o2");
 	
-	cout << "(int)o3 = " << (int)o3 << endl;
+	//cout << "(int)o2 = " << (int)o2 << endl;
 
     return 0;
 }

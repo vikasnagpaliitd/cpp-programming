@@ -1,15 +1,14 @@
-//Demonstrates : Defining + operator
+//Demonstrates : Defining + operator (as a member function)
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
         int x;
         int y;
 
-
     public:
-
 
     Point(int ax=0, int ay=0)
     {
@@ -26,18 +25,14 @@ class Point
 	}
 	
 	//Defining + operator using member function
-	
 	Point operator+(const Point& other) const
 	{
-		return Point(this->x + other.x, 
-			this->y + other.y);
-		
+		//return Point(this->x + other.x, this->y + other.y);
+		return Point(x + other.x, y + other.y);
 	}
-	
 
-
-    void display(); 
-	void display(string name);  
+    void display() const; 
+	void display(string name) const;  
 	
 	// Set values
 	void set_values(int x=10, int y=20)
@@ -45,19 +40,17 @@ class Point
 		this->x = x;
 		this->y = y;
 	}
-
-
 };
 
 //display with no argument
-void Point::display()
+void Point::display() const
 {
     cout << "x = " << x << endl;
     cout << "y = " << y << endl;
 }
 
 //display with name argument
-void Point::display(string name)
+void Point::display(string name) const
 {
 	
     cout << name << ":" << "x = " << x << endl;
@@ -73,9 +66,7 @@ int main()
 
 	o3 = o1 + o2;
 	//o3 = o1.operator+(o2);
-	//o3.operator=(o1.operator+(o2));
-	//Point o2 = o1; // Another way of copy constructor
-
+	//o3.operator=(o1.operator+(o2)); // Ques: we didnt define operator=. how does it work?
 	
     o1.display("o1(10,11)");
 	o2.display("o2(20,22)");

@@ -1,18 +1,17 @@
 //Demonstrates : static data member
- 
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
         int x;
         int y;
-	public:
+	public: // it is not advised to make count public. Done here just for convenience of access.
 		static int count; //declaration // count of instances
 
 
     public:
-
 
     Point(int ax=0, int ay=0)
     {
@@ -32,20 +31,14 @@ class Point
 		count++;
 	}
 	
-	//Defining + operator using member function
-	
 	Point operator+(const Point& other) const
 	{
-		return Point(this->x + other.x, 
-			this->y + other.y);
-		
+		return Point(this->x + other.x, this->y + other.y);
 	}
 	
 	Point operator+(int other) const
 	{
-		return Point(this->x + other, 
-			this->y);
-		
+		return Point(this->x + other, this->y);
 	}
 	
 	Point& operator = (const Point &other)
@@ -56,10 +49,7 @@ class Point
 		this->y = other.y;
 		
 		return (*this);
-		// Note: Scott Meyers : effective c++ suggests: check for self assessment
 	}
-	
-
 
     void display(); 
 	void display(string name);  

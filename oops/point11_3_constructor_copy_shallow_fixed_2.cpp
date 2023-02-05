@@ -1,7 +1,8 @@
-//Demonstrates : Copy constructor : Shallow : fixed
+//Demonstrates : Copy constructor : Shallow : fix2 : Maitain reference counts
 #include <iostream>
 #include <cstring>
 using namespace std;
+
 struct refPtr
 {
 	int count; // Reference count
@@ -15,10 +16,9 @@ class Point
         int y;
 		
 		//const char *label; 
-		struct refPtr *refPtr;
+		struct refPtr *refPtr; // Fix: maintain reference count in addition to pointer
 		
     public:
-
 	
 
     Point(const char *alabel, int ax=5, int ay=10)
@@ -33,23 +33,21 @@ class Point
         x = ax;
         y = ay;
     }
-	
+
+    // Copy constructor	
 	Point(const Point& obj)
 	{
 		cout << "Copy constructor called" << endl;
-		//label = new char[strlen(obj.label) + 1]; // Deep copy
-		//strcpy(label,obj.label);
+
 		refPtr= obj.refPtr;
 		refPtr->count++; // increase reference count
-		// Ques: what if one object wants to change string content after another reference pointer pointing to it.
+		// Ques: what if one object wants to change string content when reference count is > 1
 
 		//Exercise : try achieving the same thing using reference instead of pointer
 		
         x = obj.x;
         y = obj.y;
-
 	}
-
 
 
     void display(); 

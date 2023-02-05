@@ -1,4 +1,4 @@
-//Demonstrates : overloaded >> and <<
+//Demonstrates : Overloaded assignment operator vs copy constructor
  
 #include <iostream>
 using namespace std;
@@ -8,9 +8,7 @@ class Point
         int x;
         int y;
 
-
     public:
-
 
     Point(int ax=0, int ay=0)
     {
@@ -26,20 +24,14 @@ class Point
 		y = obj.y;
 	}
 	
-	//Defining + operator using member function
-	
 	Point operator+(const Point& other) const
 	{
-		return Point(this->x + other.x, 
-			this->y + other.y);
-		
+		return Point(this->x + other.x, this->y + other.y);
 	}
 	
 	Point operator+(int other) const
 	{
-		return Point(this->x + other, 
-			this->y);
-		
+		return Point(this->x + other, this->y);
 	}
 	
 	Point& operator = (const Point &other)

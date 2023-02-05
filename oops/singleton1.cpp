@@ -1,3 +1,4 @@
+// Demonstrates : Singleton pattern
 #include <iostream>
 using namespace std;
 
@@ -6,6 +7,7 @@ class Point
 
 };
 
+// PointFactory is a singleton classs
 class PointFactory {
 
    private:

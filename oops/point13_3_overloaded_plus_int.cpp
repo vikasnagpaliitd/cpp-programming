@@ -1,12 +1,12 @@
-//Demonstrates : Defining - operator using friend
+//Demonstrates : Achieving plus + with int 
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
         int x;
         int y;
-
 
     public:
 
@@ -25,23 +25,18 @@ class Point
 		y = obj.y;
 	}
 	
-	//Defining + operator using member function
-	
 	Point operator+(const Point& other) const
 	{
 		return Point(this->x + other.x, 
 			this->y + other.y);
-		
 	}
-	
-	Point operator+(int other) const
-	{
-		return Point(this->x + other, 
-			this->y);
-		
-	}
-	
 
+    //Way1: overload operator+ so that it accepts integer too	
+	Point operator+(int val) const
+	{
+		return Point(this->x + val, 
+			this->y);
+	}
 
     void display(); 
 	void display(string name);  
@@ -60,8 +55,7 @@ class Point
 
 Point operator-(const Point& first, const Point& second)
 {
-	return Point(first.x - second.x,
-		first.y - second.y);
+	return Point(first.x - second.x, first.y - second.y);
 }
 
 //display with no argument
@@ -88,8 +82,6 @@ int main()
 	Point o3 = o1 + o2 + 100;
 	
 	//Ques: how to enable 5+o1 calculation?
-	
-
 	
     o1.display("o1(10,11)");
 	o2.display("o2(20,22)");

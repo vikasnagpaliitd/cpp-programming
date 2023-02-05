@@ -17,13 +17,18 @@ class Point
         x = ax;
         y = ay;
     }
-	
-	Point(const Point& obj)
+
+//#if 0	// if we do not define copy ctor, compiler provides default implementation of member-wise copy
+	//Point(Point obj) // wrong
+	//Point(Point& obj) // partly wrong
+	Point(const Point& obj) // Copy constructor
 	{
 		cout << "Copy constructor called" << endl;
 		x = obj.x;
 		y = obj.y;
 	}
+//#endif
+    // Ques : how does move constructor look like? (r-value semantics of C++11)
 	
 
 
@@ -61,6 +66,7 @@ int main()
     Point o1(10,11); 
 	Point o2(o1); 
 	//Point o2 = o1; // Another way of calling copy constructor
+    // o2 = o1 // Ques: does it call copy constructor?
 
 	
     o1.display("o1(10,11)");

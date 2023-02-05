@@ -1,15 +1,14 @@
 //Demonstrates : Passing objects to functions : by value, by reference, by const reference, by pointer
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
         int x;
         int y;
 
-
     public:
-
 
     Point(int ax=0, int ay=0)
     {
@@ -24,8 +23,6 @@ class Point
 		x = obj.x;
 		y = obj.y;
 	}
-	
- 
 
 
     void display() const; 
@@ -42,8 +39,6 @@ class Point
 	{
 		cout << "Destructor called" << endl;
 	}
-
-
 };
 
 //display with no argument
@@ -56,14 +51,13 @@ void Point::display() const
 //display with name argument
 void Point::display(string name) const
 {
-	
     cout << name << ":" << "x = " << x << endl;
     cout << name << ":" << "y = " << y << endl;
 }
 
-//void do_something(Point obj)
+void do_something(Point obj)
 //void do_something(Point &obj)
-void do_something(const Point &obj)
+//void do_something(const Point &obj)
 //void do_something(Point *pobj)
 {
 	cout << "do_something: called" << endl;

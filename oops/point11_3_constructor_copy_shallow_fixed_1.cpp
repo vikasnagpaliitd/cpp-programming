@@ -1,4 +1,4 @@
-//Demonstrates : Copy constructor : Shallow : fixed
+//Demonstrates : Copy constructor : Shallow : fixed 1 : workaround: assume the pointer is not dynamically allocated
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -7,11 +7,9 @@ class Point
     private:
         int x;
         int y;
-		const char *label; // Soln : make it const if the pointer does not point to heap memory OR use reference counts
+		const char *label; // Workaround: fix1: assume label not to be freed as not dynamically allocated
 		
     public:
-
-	
 
     Point(const char *alabel, int ax=5, int ay=10)
     {
@@ -23,19 +21,17 @@ class Point
         x = ax;
         y = ay;
     }
-	
+
+    // Copy constructor	
 	Point(const Point& obj)
 	{
 		cout << "Copy constructor called" << endl;
-		//label = new char[strlen(obj.label) + 1]; // Deep copy
-		//strcpy(label,obj.label);
+
 		label = obj.label; 
 		
         x = obj.x;
         y = obj.y;
-
 	}
-
 
 
     void display(); 

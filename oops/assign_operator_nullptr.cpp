@@ -22,6 +22,12 @@ private:
     MyString& operator= (const MyString &str);
  
     friend std::ostream& operator<<(std::ostream& out, const MyString &s);
+
+    ~MyString()
+    {
+        if (m_data)
+            delete [] m_data;
+    }
 };
  
 std::ostream& operator<<(std::ostream& out, const MyString &s)

@@ -1,15 +1,14 @@
-//Demonstrates : Defining - operator using friend
+//Demonstrates : Defining minus - operator using friend function
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
         int x;
         int y;
 
-
     public:
-
 
     Point(int ax=0, int ay=0)
     {
@@ -25,16 +24,11 @@ class Point
 		y = obj.y;
 	}
 	
-	//Defining + operator using member function
-	
 	Point operator+(const Point& other) const
 	{
 		return Point(this->x + other.x, 
 			this->y + other.y);
-		
 	}
-	
-
 
     void display(); 
 	void display(string name);  
@@ -48,7 +42,6 @@ class Point
 
     //friend function
 	friend Point operator-(const Point& first, const Point& second);
-
 };
 
 Point operator-(const Point& first, const Point& second)
@@ -79,8 +72,6 @@ int main()
 	Point o2(20,22);
 
 	Point o3 = o1 - o2;
-	
-
 	
     o1.display("o1(10,11)");
 	o2.display("o2(20,22)");

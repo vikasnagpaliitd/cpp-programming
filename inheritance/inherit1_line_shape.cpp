@@ -1,18 +1,17 @@
-//Demonstrates : Line inherits from Shape.
-// Construction: Base then member then class
-// Destruction: class then member then Base
+//Demonstrates : Line inherits from Shape. Line contains Point objects
+// Construction: Base then member then derived class
+// Destruction: Derived class then member then Base
  
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
         int x;
         int y;
 
-
     public:
-
 
     Point(int ax=0, int ay=0)
     {
@@ -28,20 +27,14 @@ class Point
 		y = obj.y;
 	}
 	
-	//Defining + operator using member function
-	
 	Point operator+(const Point& other) const
 	{
-		return Point(this->x + other.x, 
-			this->y + other.y);
-		
+		return Point(this->x + other.x, this->y + other.y);
 	}
 	
 	Point operator+(int other) const
 	{
-		return Point(this->x + other, 
-			this->y);
-		
+		return Point(this->x + other, this->y);
 	}
 	
 	Point& operator = (const Point &other)
@@ -53,8 +46,6 @@ class Point
 		
 		return (*this);
 	}
-	
-
 
     void display(); 
 	void display(string name);  
@@ -80,13 +71,11 @@ class Point
 	friend Point operator-(const Point& first, const Point& second);
 	friend ostream& operator<<(ostream& out_stream, const Point&obj);
 	friend istream& operator>>(istream& input_stream, Point&obj);
-
 };
 
 Point operator-(const Point& first, const Point& second)
 {
-	return Point(first.x - second.x,
-		first.y - second.y);
+	return Point(first.x - second.x, first.y - second.y);
 }
 
 //display with no argument
@@ -99,11 +88,9 @@ void Point::display()
 //display with name argument
 void Point::display(string name)
 {
-	
     cout << name << ":" << "x = " << x << endl;
     cout << name << ":" << "y = " << y << endl;
 }
-
 
 ostream& operator<<(ostream& out_stream, const Point&obj)
 {
@@ -115,21 +102,24 @@ ostream& operator<<(ostream& out_stream, const Point&obj)
 istream& operator>>(istream& input_stream, Point&obj) // Note: we did not use const Point&
 {
 	input_stream >> obj.x >> obj.y;
-
 	return input_stream;
 }
 
 
 class Shape // Base class of different shapes
 {
-	private:
-	string label; // Label shown for different shapes
+	protected:
+	//private:
+	string label; // Label shown for the shape
 	
 	public:
+    //Note: Typically, Shape class shall have (pure)virtual functions like draw(),rotate() etc
+    //   to be implemented by derived classes
 	Shape(string alabel) : label(alabel)
 	{
 		cout << "Shape Constructor called" << endl;
 	}
+
 	~Shape()
 	{
 		cout << "Shape Destructor called" << endl;
@@ -144,11 +134,15 @@ class Line : public Shape // Line inherits from Shape with public inheritance.
 		
 	public:
 		//Line(string alabel, int x1, int y1, int x2, int y2) :  p1(x1,y1), p2(x2,y2),Shape(alabel) //Ques: will order of ctor calls change?
+        // Can we put member initializer “label(alabel)”in Line’s constructor?
+		// Line(string alabel, int x1, int y1, int x2, int y2) :  Shape(alabel),p1(x1,y1), p2(x2,y2), label(alabel)
 		Line(string alabel, int x1, int y1, int x2, int y2) :  Shape(alabel),p1(x1,y1), p2(x2,y2)
+
 		{
 			cout << "Line's constructor called" << endl;
 
 		}
+
 		~Line()
 		{
 			cout << "Line's destructor called" << endl;

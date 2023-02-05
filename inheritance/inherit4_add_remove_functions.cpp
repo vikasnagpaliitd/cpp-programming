@@ -4,7 +4,7 @@ using namespace std;
 
 class Base
 {
-	protected:
+	public: // ideally should not be public
 	    int m_value;
 
 	public:
@@ -31,6 +31,7 @@ class Derived: public Base
 		}
 		~Derived()
 		{
+			cout << "Derived destructor called: m_value = " << m_value << endl;
 			//cout << "Derived destructor called" << endl;
 		}
 		void derived_func1()
@@ -38,15 +39,18 @@ class Derived: public Base
 			cout << "derived_func1() called" << endl;
 		}
    private:
-		using Base::identify; 
+		//using Base::identify; 
+        //using Base::m_value;
 };
+
 int main()
 {
 	Derived derived(7);
-    //cout << "identify on derived object : ";
-    //derived.identify();	
+    cout << "identify on derived object : ";
+    derived.identify();	
     cout << "derived_func1 on derived object : ";
     derived.derived_func1();	
+    cout << "derived.m_value = " << derived.m_value << endl;
 
 	return 0;
 }

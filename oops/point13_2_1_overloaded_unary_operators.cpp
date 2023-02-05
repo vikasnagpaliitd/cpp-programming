@@ -1,15 +1,14 @@
-//Demonstrates : Defining - operator using friend
+//Demonstrates : Overloading unary prefix/postfix operators using member/friend function
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
         int x;
         int y;
 
-
     public:
-
 
     Point(int ax=0, int ay=0)
     {
@@ -24,24 +23,25 @@ class Point
 		x = obj.x;
 		y = obj.y;
 	}
-	
-	//Defining + operator using member function
-	
+
+    // Binary +	
 	Point operator+(const Point& other) const
 	{
 		return Point(this->x + other.x, 
 			this->y + other.y);
 		
 	}
-	
-	Point& operator++() // unary operator ++ (prefix)
+
+    // unary ++ (prefix)	
+	Point& operator++() 
 	{
         cout << "Inside operator++() (prefix)" << endl;
 		x++; y++;
         return *this;
 	}
 
-	Point operator++(int dummy) // unary operator ++ (postfix)
+    // unary ++ (postfix)
+	Point operator++(int dummy) 
 	{
         cout << "Inside operator++(int) (postfix)" << endl;
 		Point   result(x, y);
@@ -49,7 +49,8 @@ class Point
 		return result;
 	}
 
-	Point operator+() const // unary operator +
+    // unary +
+	Point operator+() const 
 	{
 		return *this;
 	}
@@ -66,22 +67,25 @@ class Point
 	}
 
     //friend function
-	friend Point operator-(const Point& first, const Point& second); // binary
-	friend Point operator-(const Point& obj); // unary - 
+	friend Point operator-(const Point& first, const Point& second); // binary -
+	friend Point operator-(const Point& obj); // unary - prefix
 	friend Point operator--(Point& obj, int dummy); // unary --, postfix
 
 };
 
+//binary -
 Point operator-(const Point& first, const Point& second)
 {
-	return Point(first.x - second.x,
-		first.y - second.y);
+	return Point(first.x - second.x, first.y - second.y);
 }
+
+//unary - prefix
 Point operator-(const Point& obj)// unary -
 {
 	return Point(-obj.x, -obj.y);
 }
 
+//unary -- postfix
 Point operator--(Point& obj, int dummy) // postfix --
 {
 	Point result(obj);
@@ -111,39 +115,31 @@ void Point::display(string name)
 int main()
 {
     Point o1(10,11); 
-	Point o2(20,22);
-    Point o3;
+    Point o2;
 
-	//Point o3 = o1 - o2;
     o1.display("o1");
     cout<< "-------------------------" << endl; 
-    cout << "o3 = o1++" << endl;
-	o3 = o1++;
+    cout << "o2 = o1++" << endl;
+	o2 = o1++;
     o1.display("o1");
-    o3.display("o3");
+    o2.display("o2");
 
    
     cout<< "-------------------------" << endl; 
-    cout << "o3 = ++o1" << endl;
-	o3 = ++o1;
+    cout << "o2 = ++o1" << endl;
+	o2 = ++o1;
     o1.display("o1");
-    o3.display("o3");
+    o2.display("o2");
     cout<< "-------------------------" << endl; 
-    cout << "o3 = -o1" << endl;
-	o3 = -o1;
+    cout << "o2 = -o1" << endl;
+	o2 = -o1;
     o1.display("o1");
-    o3.display("o3");
+    o2.display("o2");
     cout<< "-------------------------" << endl; 
-    cout << "o3 = o1--" << endl;
-	o3 = o1--;
+    cout << "o2 = o1--" << endl;
+	o2 = o1--;
     o1.display("o1");
-    o3.display("o3");
+    o2.display("o2");
 	
-
-	
-    o1.display("o1(10,11)");
-	o2.display("o2(20,22)");
-	o3.display("o3");
-
     return 0;
 }

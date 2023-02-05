@@ -22,18 +22,17 @@ class Point
         x = ax;
         y = ay;
     }
-	
+
+    // Copy constructor	
 	Point(const Point& obj)
 	{
 		cout << "Copy constructor called" << endl;
-		label = new char[strlen(obj.label) + 1]; // Deep copy
-		strcpy(label,obj.label);
+		label = new char[strlen(obj.label) + 1]; 
+		strcpy(label,obj.label); // Deep copy
 		
         x = obj.x;
         y = obj.y;
-
 	}
-
 
 
     void display(); 
