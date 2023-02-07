@@ -1,8 +1,8 @@
-//Demonstrates : Shape is base class. Line and Rectangle inherit from it
+//Demonstrates : Abstract base class. pure virtual function
+// Shape is base class. Line and Rectangle inherit from it
  
 #include <iostream>
 using namespace std;
-
 
 class Shape 
 {
@@ -33,13 +33,14 @@ class Line : public Shape
 		Line(string alabel) :  Shape(alabel)
 		{
 			cout << "Line's constructor called" << endl;
-
 		}
-
+// What if we not define draw()? will we be able to instantiate Line
+//
 		void draw()
 		{
 			cout << "Line::draw() called" << endl;
 		}
+//
 
 		~Line()
 		{
@@ -56,12 +57,13 @@ class Rectangle : public Shape
 		Rectangle(string alabel) :  Shape(alabel)
 		{
 			cout << "Rectangle's constructor called" << endl;
-
 		}
+
 		void draw()
 		{
 			cout << "Rectangle::draw() called" << endl;
 		}
+
 		~Rectangle()
 		{
 			cout << "Rectangle's destructor called" << endl;

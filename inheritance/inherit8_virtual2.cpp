@@ -1,9 +1,8 @@
-// Virtual destructor
+// Demonstrates: Virtual destructor
 #include <iostream>
 using namespace std;
 
-
-// Inheritance hierarchy A => B => C
+// Inheritance hierarchy : C drives from B. B derives from A.
 
 class A
 {
@@ -24,8 +23,8 @@ class A
 		cout << "A::display(): a = " << a << endl;
 	}
 
-	//virtual ~A()
-	~A()
+	virtual ~A()
+	//~A()
 	{
 		cout << "Destructor:A" << endl;
 		delete [] arr_a;
@@ -48,7 +47,8 @@ class B : public A
 	//virtual void display()
 	void display()
 	{
-		cout << "B::display(): a = " << a << endl;
+		//cout << "B::display(): a = " << a << endl;
+		A::display();
 		cout << "B::display(): b = " << b << endl;
 	}
 	~B()
@@ -73,8 +73,9 @@ class C : public B
 
 	void display()
 	{
-		cout << "C::display(): a = " << a << endl;
-		cout << "C::display(): b = " << b << endl;
+		//cout << "C::display(): a = " << a << endl;
+		//cout << "C::display(): b = " << b << endl;
+		B::display();
 		cout << "C::display(): c = " << c << endl;
 	}
 	~C()
@@ -86,42 +87,51 @@ class C : public B
 
 int main()
 {
-/*	A obj_a(100);
+
+	// Experiment  : Constructors,destructors in statically allocated objects
+    /*
+	A obj_a(100);
 	B obj_b(5,10);
 	C obj_c(1,2,3);
 
 	obj_a.display();
+    cout << "----------------" << endl;
 	obj_b.display();
+    cout << "----------------" << endl;
 	obj_c.display();
 
+	*/
 
-	cout << endl << endl; */
+    // Experiment: Ref to A referring to B. Or Ref to A referring to C
+    /*
+	B obj_b(5,10);
+	A &obj_a_ref = obj_b;
 
-	// Experiment  : Assigning derived class object to base class
-    /*A obj_a1(10);
-    obj_a1 = obj_b;
-    obj_a1.display();*/
+	//C obj_c(1,2,3);
+	//A &obj_a_ref = obj_c;
 
-	// Experiment  : Assigning 2nd level derived class object to base class
-    /*A obj_a1(10);
-    obj_a1 = obj_c;
-    obj_a1.display();*/
+	//A &obj_a_ref = *new C(1,2,3); // Leak will happen as delete not called
+	//obj_a_ref.display();
+    */
 
+    // Experiment: Pointer to A pointing to B
+	/*
+    A *obj_a_ptr = new B(5,10);
+    delete obj_a_ptr;
+    */
 
-	//A &obj_a_ref = obj_b;
-	/*A &obj_a_ref = obj_c;
-	obj_a_ref.display();*/
+    // Experiment: Pointer to A pointing to C
+	/*
+    A *obj_a_ptr = new C(3, 5,10);
+    delete obj_a_ptr;
+    */
 
-	/*A *obj_a_ptr = new B(5,10);
-    delete obj_a_ptr;*/
-
-
-	/*A *obj_a_ptr = new C(3, 5,10);
-    delete obj_a_ptr;*/
-
+    // Experiment: Pointer to B pointing to C
+    /*
+	// invokes dtor of C even if ~B() not declared virtual (if ~A() is virtual)
 	B *obj_b_ptr = new C(3, 5,10);
     delete obj_b_ptr;
+    */
 
 	return 0;
-
 }

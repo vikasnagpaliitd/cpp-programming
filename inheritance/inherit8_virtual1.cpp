@@ -99,7 +99,7 @@ int main()
 	obj_a_ref.display();
     */
     
-    // Experiment: Pointer to A referring to B. Or Pointer to A referring to C
+    // Experiment: Pointer to A pointing to B. Or Pointer to A pointing to C
     /*
 	//A *obj_a_ptr = &obj_b;
 	A *obj_a_ptr = &obj_c;
@@ -108,5 +108,4 @@ int main()
 
 
 	return 0;
-
 }
