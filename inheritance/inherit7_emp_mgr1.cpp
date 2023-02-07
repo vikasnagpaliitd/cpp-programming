@@ -1,3 +1,5 @@
+// Demonstrates : Employee inherits from Manager. Calling parent class 
+//   function when child class has overridden the function 
 #include <iostream>
 using namespace std;
 
@@ -36,7 +38,7 @@ class Manager : public Employee
 
 	void display()
 	{
-		//cout << "id = " << id << endl;
+		//cout << "id = " << id << endl; // bad approach
 		//cout << "name = " << name << endl;
 		this->Employee::display(); // Note: Calling parent's class function with the same name
 		cout << "dept = " << dept << endl;

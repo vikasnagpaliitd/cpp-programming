@@ -1,4 +1,11 @@
-//Demonstrates : Hybrid inherit. Common base class. diamond problem. Virtual base class solution
+//Demonstrates : Hybrid inherit. Common base class. Solution of Diamond problem
+//   Solution : use Virtual base class
+/* Inheritance Hierarchy
+   - Base
+   - Child1 derives from Base
+   - Child2 derives from Base
+   - GrandChild derives from Child1 and Child2
+*/
 #include <iostream>
 using namespace std;
 
@@ -13,7 +20,7 @@ class Base
 		}
 };
 
-class Child1 : virtual public Base
+class Child1 : virtual public Base // Note: virtual inheritance
 {
 	public:
 		Child1(int val): Base(val)
@@ -22,7 +29,7 @@ class Child1 : virtual public Base
         }
 };
 
-class Child2 : virtual public Base
+class Child2 : virtual public Base // Note: virtual inheritance
 {
 	public:
 		Child2(int val): Base(val)
@@ -35,6 +42,7 @@ class GrandChild: public Child1, public Child2
 {
 	public:
 		GrandChild(int val1, int val2) : Base(1), Child1(val1), Child2(val2)
+		//GrandChild(int val) : Base(val), Child1(val), Child2(val) 
 		{
 			cout << "GrandChild(int) constructor" << endl;
 		}
@@ -44,6 +52,7 @@ class GrandChild: public Child1, public Child2
 int main()
 {
     GrandChild obj(5,10);
+    //GrandChild obj(15);
 
     cout << "obj.data = " << obj.data << endl;
     cout << "obj.Base::data = " << obj.Base::data << endl;

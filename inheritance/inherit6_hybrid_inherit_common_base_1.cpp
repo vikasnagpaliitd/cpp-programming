@@ -1,4 +1,10 @@
-//Demonstrates : Hybrid inherit. Common base class. diamon problem
+//Demonstrates : Hybrid inherit. Common base class. diamond problem
+/* Inheritance Hierarchy
+   - Base
+   - Child1 derives from Base
+   - Child2 derives from Base
+   - GrandChild derives from Child1 and Child2
+*/
 #include <iostream>
 using namespace std;
 
@@ -34,12 +40,12 @@ class Child2 : public Base
 class GrandChild: public Child1, public Child2
 {
 	public:
+        // Ques: should constructor take two int(s) or one int?
 		GrandChild(int val1, int val2) : Child1(val1), Child2(val2)
 		{
 			cout << "GrandChild(int) Constructor" << endl;
 		}
 };
-
 
 int main()
 {
@@ -47,8 +53,11 @@ int main()
 
     //cout << "obj.Base::data = " << obj.Base::data << endl;// error: ‘Base’ is an ambiguous base of ‘GrandChild’
 
-    cout << "obj.Child1::data = " << obj.Child1::data << endl;
-    cout << "obj.Child2::data = " << obj.Child2::data << endl;
+    cout << "obj.Child1::data = " << obj.Child1::data << endl; // 5
+    cout << "obj.Child2::data = " << obj.Child2::data << endl; // 10
+
+    // Note: Base constructor is called twice. Implies two instances of Base within GrandChild!
+
 	return 0;
 }
 
