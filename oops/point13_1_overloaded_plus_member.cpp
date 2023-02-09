@@ -57,7 +57,6 @@ void Point::display(string name) const
     cout << name << ":" << "y = " << y << endl;
 }
 
-
 int main()
 {
     Point o1(10,11); 

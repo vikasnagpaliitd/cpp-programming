@@ -1,4 +1,4 @@
-//Demonstrates : Make data private, concept of this pointer
+//Demonstrates : concept of this pointer
 #include <iostream>
 using namespace std;
 
@@ -24,7 +24,7 @@ class Point
     //     this->y = y;
     // }
 
-    void display()
+    void display() const
     {
         cout << "x = " << x << endl;
         cout << "y = " << y << endl;

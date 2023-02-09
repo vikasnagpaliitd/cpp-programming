@@ -24,7 +24,6 @@ class Point
 		y = obj.y;
 	}
 
-
     void display() const; 
 	void display(string name) const;  
 	
@@ -64,7 +63,6 @@ void do_something(Point obj)
 	obj.display("obj");
 	//pobj->display("*pobj");
 }
-
 
 int main()
 {

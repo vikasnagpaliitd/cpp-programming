@@ -20,7 +20,6 @@ class Point
 		
     public:
 	
-
     Point(const char *alabel, int ax=5, int ay=10)
     {
 		cout << "Parameterized constructor called" << endl;
@@ -28,7 +27,6 @@ class Point
 		refPtr->ptr = new char[strlen(alabel) + 1];
 		refPtr->count = 1;
 		strcpy(refPtr->ptr,alabel);
-		
 		
         x = ax;
         y = ay;
@@ -49,9 +47,8 @@ class Point
         y = obj.y;
 	}
 
-
-    void display(); 
-	void display(string name);  
+    void display() const; 
+	void display(string name) const;  
 	
 	// Set values
 	void set_values(int x=10, int y=20)
@@ -74,19 +71,17 @@ class Point
 		else
 			cout << "Destructor: not freeing any memory" << endl;
 	}
-
-
 };
 
 //display with no argument
-void Point::display()
+void Point::display() const
 {
     cout << "x = " << x << endl;
     cout << "y = " << y << endl;
 }
 
 //display with name argument
-void Point::display(string name)
+void Point::display(string name) const
 {
 	cout << name << ":" << "label = " << refPtr->ptr << endl;
     cout << name << ":" << "x = " << x << endl;

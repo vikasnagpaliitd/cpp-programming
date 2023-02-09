@@ -66,7 +66,6 @@ Point do_something()
 	return local;
 }
 
-
 int main()
 {
 	Point obj = do_something();

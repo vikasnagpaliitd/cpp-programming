@@ -1,4 +1,4 @@
-//Demonstrates : Overloaded function
+//Demonstrates : Overloaded functions
 #include <iostream>
 using namespace std;
 
@@ -16,19 +16,20 @@ class Point
         y = ay;
     }
 
-    void display(); 
-	void display(string name);  // Note: pre-built class string (Ques: should we prefer string or char* ? )
+    void display() const; 
+    //int display(); // can not overload based on return types
+	void display(string name) const;  // Note: pre-built class string (Ques: should we prefer string or char* ? )
 };
 
 //display with no argument
-void Point::display()
+void Point::display() const
 {
     cout << "x = " << x << endl;
     cout << "y = " << y << endl;
 }
 
 //display with name argument
-void Point::display(string name)
+void Point::display(string name) const
 {
 	
     cout << name << ":" << "x = " << x << endl;

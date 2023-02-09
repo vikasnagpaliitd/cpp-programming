@@ -1,7 +1,7 @@
 //Demonstrates : Overloaded assignment operator vs copy constructor
- 
 #include <iostream>
 using namespace std;
+
 class Point
 {
     private:
@@ -44,11 +44,9 @@ class Point
 		return (*this);
 		// Note: Scott Meyers : effective c++ suggests: check for self assessment
 	}
-	
 
-
-    void display(); 
-	void display(string name);  
+    void display() const; 
+	void display(string name) const;  
 	
 	// Set values
 	void set_values(int x=10, int y=20)
@@ -62,11 +60,10 @@ class Point
 		return this->x;
 	}
 
-    //friend function
+    //friend functions
 	friend Point operator-(const Point& first, const Point& second);
 	friend ostream& operator<<(ostream& out_stream, const Point&obj);
 	friend istream& operator>>(istream& input_stream, Point&obj);
-
 };
 
 Point operator-(const Point& first, const Point& second)
@@ -76,20 +73,18 @@ Point operator-(const Point& first, const Point& second)
 }
 
 //display with no argument
-void Point::display()
+void Point::display() const
 {
     cout << "x = " << x << endl;
     cout << "y = " << y << endl;
 }
 
 //display with name argument
-void Point::display(string name)
+void Point::display(string name) const
 {
-	
     cout << name << ":" << "x = " << x << endl;
     cout << name << ":" << "y = " << y << endl;
 }
-
 
 ostream& operator<<(ostream& out_stream, const Point&obj)
 {

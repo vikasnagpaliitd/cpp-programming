@@ -17,11 +17,11 @@ class Point
         y = ay;
     }
 
-    void display(); // declaration
+    void display() const; // declaration
 };
 
 //Function defined outside class. It is still a class member.
-void Point::display()
+void Point::display() const
 {
     cout << "x = " << x << endl;
     cout << "y = " << y << endl;

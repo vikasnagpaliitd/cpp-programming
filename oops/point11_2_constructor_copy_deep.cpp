@@ -11,8 +11,6 @@ class Point
 		
     public:
 
-	
-
     Point(const char *alabel, int ax=5, int ay=10)
     {
 		cout << "Parameterized constructor called" << endl;
@@ -34,9 +32,8 @@ class Point
         y = obj.y;
 	}
 
-
-    void display(); 
-	void display(string name);  
+    void display() const; 
+	void display(string name) const;  
 	
 	// Set values
 	void set_values(int x=10, int y=20)
@@ -50,19 +47,17 @@ class Point
 		cout << "Destructor called on label:" << label << endl;
 		delete [] label; 
 	}
-
-
 };
 
 //display with no argument
-void Point::display()
+void Point::display() const
 {
     cout << "x = " << x << endl;
     cout << "y = " << y << endl;
 }
 
 //display with name argument
-void Point::display(string name)
+void Point::display(string name) const
 {
 	cout << name << ":" << "label = " << label << endl;
     cout << name << ":" << "x = " << x << endl;

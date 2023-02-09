@@ -17,8 +17,8 @@ class Point
         y = ay;
     }
 
-    void display(); 
-    void display (string name);
+    void display() const; 
+    void display (string name) const;
 	//void display (string name) const;  
 	
 	// Set Values
@@ -30,7 +30,7 @@ class Point
 };
 
 //display with no argument
-void Point::display()
+void Point::display() const
 {
     cout << "x = " << x << endl;
     cout << "y = " << y << endl;
@@ -38,7 +38,7 @@ void Point::display()
 
 //display with name argument
 //void Point::display (string name) const
-void Point::display (string name)
+void Point::display (string name) const
 {
 	
     cout << name << ":" << "x = " << x << endl;

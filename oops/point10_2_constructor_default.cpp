@@ -22,8 +22,8 @@ class Point
     }
 //#endif
 
-    void display(); 
-	void display(string name);  
+    void display() const; 
+	void display(string name) const;  
 	
 	// Set values
 	void set_values(int x=10, int y=20)
@@ -34,14 +34,14 @@ class Point
 };
 
 //display with no argument
-void Point::display()
+void Point::display() const
 {
     cout << "x = " << x << endl;
     cout << "y = " << y << endl;
 }
 
 //display with name argument
-void Point::display(string name)
+void Point::display(string name) const
 {
 	
     cout << name << ":" << "x = " << x << endl;
@@ -53,7 +53,6 @@ int main()
     //Point o1; // works : default constructor called with no arguments
 	//Point o1();// Caution: interpreted as function
 
-	
 	Point *p1 = new Point();
 
     //o1.display("o1");

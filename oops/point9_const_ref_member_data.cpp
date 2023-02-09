@@ -22,8 +22,8 @@ class Point
 		//ref = val; // Ques: why does it not work?
     }
 
-    void display(); 
-	void display (string name) ;  
+    void display() const; 
+	void display (string name) const;  
 	
 	// Set Values
 	void set_values(int x=10, int y=20)
@@ -35,7 +35,7 @@ class Point
 };
 
 //display with no argument
-void Point::display()
+void Point::display() const
 {
 	cout << "label = " << label << endl;
     cout << "x = " << x << endl;
@@ -43,7 +43,7 @@ void Point::display()
 }
 
 //display with name argument
-void Point::display (string name) 
+void Point::display (string name) const
 {
 	cout << name << ":" << "label = " << label << endl;
     cout << name << ":" << "x = " << x << endl;

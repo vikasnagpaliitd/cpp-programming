@@ -16,7 +16,7 @@ class Point
     }
 
     void display(); 
-	int display();
+	//int display();
 	void display(string name);  // notice pre-built class string
 
 

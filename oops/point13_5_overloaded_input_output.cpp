@@ -34,8 +34,8 @@ class Point
 		return Point(this->x + other, this->y);
 	}
 #if 0	
-    void display(); 
-	void display(string name);  
+    void display() const; 
+	void display(string name) const;  
 #endif
 	
 	// Set values
@@ -65,21 +65,20 @@ Point operator-(const Point& first, const Point& second)
 
 #if 0
 //display with no argument
-void Point::display()
+void Point::display() const
 {
     cout << "x = " << x << endl;
     cout << "y = " << y << endl;
 }
 
 //display with name argument
-void Point::display(string name)
+void Point::display(string name) const
 {
 	
     cout << name << ":" << "x = " << x << endl;
     cout << name << ":" << "y = " << y << endl;
 }
 #endif
-
 
 ostream& operator<<(ostream& out_stream, const Point&obj)
 {

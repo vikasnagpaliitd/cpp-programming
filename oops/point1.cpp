@@ -1,24 +1,35 @@
-//Demonstrates : constructor, concept of namespace, use of "using namespace"
+//Demonstrates : class, object, constructor, destructor
 #include <iostream>
 using namespace std;
 
 class Point
 {
-    public:
+    private:
 	
-    int x; // Ques: is keeping data public, a good idea?
+    int x; // Data is normally hidden. Functions are normally public. But not necessary
     int y;
+
+    public:
 
     Point(int ax, int ay) // Constructor
     {
+        cout << "Constructor called" << endl;
         x = ax;
         y = ay;
     }
-
-    void display()
+    
+    // One can mark a method 'const' indicating that it can be 
+    // safely called on const objects or on const references.
+    void display() const
     {
         cout << "x = " << x << endl;
         cout << "y = " << y << endl;
+    }
+
+    ~Point() 
+    {
+        cout << "Destructor called" << endl;
+        // nothing to do as no resource allocated by constructor
     }
 };
 

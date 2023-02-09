@@ -27,9 +27,7 @@ class Point
     // Binary +	
 	Point operator+(const Point& other) const
 	{
-		return Point(this->x + other.x, 
-			this->y + other.y);
-		
+		return Point(this->x + other.x, this->y + other.y);	
 	}
 
     // unary ++ (prefix)	
@@ -55,9 +53,8 @@ class Point
 		return *this;
 	}
 
-
-    void display(); 
-	void display(string name);  
+    void display() const; 
+	void display(string name) const;  
 	
 	// Set values
 	void set_values(int x=10, int y=20)
@@ -70,7 +67,6 @@ class Point
 	friend Point operator-(const Point& first, const Point& second); // binary -
 	friend Point operator-(const Point& obj); // unary - prefix
 	friend Point operator--(Point& obj, int dummy); // unary --, postfix
-
 };
 
 //binary -
@@ -97,20 +93,18 @@ Point operator--(Point& obj, int dummy) // postfix --
 }
 
 //display with no argument
-void Point::display()
+void Point::display() const
 {
     cout << "x = " << x << endl;
     cout << "y = " << y << endl;
 }
 
 //display with name argument
-void Point::display(string name)
+void Point::display(string name) const
 {
-	
     cout << name << ":" << "x = " << x << endl;
     cout << name << ":" << "y = " << y << endl;
 }
-
 
 int main()
 {
