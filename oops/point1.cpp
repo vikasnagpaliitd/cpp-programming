@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+// Point in 2D plane having X axis and Y axis
 class Point
 {
     private:
@@ -17,7 +18,7 @@ class Point
         x = ax;
         y = ay;
     }
-    
+
     // One can mark a method 'const' indicating that it can be 
     // safely called on const objects or on const references.
     void display() const

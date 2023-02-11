@@ -3,12 +3,14 @@
 #include <cstring>
 using namespace std;
 
+// Control Block for storing reference count
 struct refPtr
 {
 	int count; // Reference count
 	char *ptr; // actual data
 };
 
+// Point in 2D plane having X axis and Y axis
 class Point
 {
     private:

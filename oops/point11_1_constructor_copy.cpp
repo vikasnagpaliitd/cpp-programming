@@ -1,6 +1,8 @@
 //Demonstrates : Copy constructor
 #include <iostream>
 using namespace std;
+
+// Point in 2D plane having X axis and Y axis
 class Point
 {
     private:

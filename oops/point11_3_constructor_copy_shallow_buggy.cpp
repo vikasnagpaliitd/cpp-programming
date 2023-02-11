@@ -3,6 +3,7 @@
 #include <cstring>
 using namespace std;
 
+// Point in 2D plane having X axis and Y axis
 class Point
 {
     private:
