@@ -1,6 +1,5 @@
-// Class Employee contains (has-a) Address
+// Demonstrates: Class Employee contains (has-a) Address
 #include <iostream>
-
 using namespace std;
 
 class Address 
@@ -31,14 +30,15 @@ class Address
 
 class Employee 
 {
-      //creating object of Address class inside employee class.
-      //Each Employee has an Address, representing has-a relationship. 
-      int id;
-      string name;
-      Address address;
+     private:
+     //Each Employee has an Address, representing has-a relationship. 
+     int id;
+     string name;
+     Address address; //creating object of Address class inside employee class
 
      public:
           Employee(int id, string name, string street_addr, string city, string state) : address(street_addr, city, state)
+          //Employee(int id, string name, string street_addr, string city, string state) // Ques: will it compile?
           {
                // Ques: what is the order of constructor calls?
                // Ques: Can we set values in address here, instead of member initialization list?

@@ -2,8 +2,8 @@
 //   Solution : use Virtual base class
 /* Inheritance Hierarchy
    - Base
-   - Child1 derives from Base
-   - Child2 derives from Base
+   - Child1 derives from Base (virtual inheritance)
+   - Child2 derives from Base (virtual inheritance)
    - GrandChild derives from Child1 and Child2
 */
 #include <iostream>
@@ -47,7 +47,6 @@ class GrandChild: public Child1, public Child2
 			cout << "GrandChild(int) constructor" << endl;
 		}
 };
-
 
 int main()
 {

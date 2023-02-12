@@ -1,8 +1,7 @@
 // Demonstrates: Polymorphism in multi level inheritance hierarchy
+// Inheritance hierarchy : C drives from B. B derives from A.
 #include <iostream>
 using namespace std;
-
-// Inheritance hierarchy : C drives from B. B derives from A.
 
 class A
 {
@@ -105,7 +104,6 @@ int main()
 	A *obj_a_ptr = &obj_c;
 	obj_a_ptr->display();
     */
-
 
 	return 0;
 }

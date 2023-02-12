@@ -16,7 +16,7 @@ class Base
 		{
 			//cout << "Base destructor called" << endl;
 		}
-	    virtual void identify() // Note : we marked it virtual
+	    virtual void identify() // Note : Added virtual
 		{ 
 			cout << "I am Base\n";
 		}
@@ -34,7 +34,11 @@ class Derived: public Base
 			//cout << "Derived destructor called" << endl;
 		}
 	    // Marking virtual here is optional. Once marked virtual in base, it is automatically virtual here
-	    virtual void identify() 
+		// Marking override is also optional but encouraged
+	    //virtual void identify() 
+		virtual void identify() override
+		//void identify() override
+		//void identify()
 		{ 
 			cout << "I am Derived\n";
 		}

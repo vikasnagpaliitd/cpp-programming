@@ -1,7 +1,6 @@
-//Demonstrates : Line inherits from Shape. Line contains Point objects
-// Construction: Base then member then derived class
-// Destruction: Derived class then member then Base
- 
+// Demonstrates : Line inherits from Shape. Line contains Point objects
+// Construction: Base -> Member(s) -> Derived 
+// Destruction:  Derived -> Member(s) -> Base
 #include <iostream>
 using namespace std;
 
@@ -137,10 +136,8 @@ class Line : public Shape // Line inherits from Shape with public inheritance.
         // Can we put member initializer “label(alabel)”in Line’s constructor?
 		// Line(string alabel, int x1, int y1, int x2, int y2) :  Shape(alabel),p1(x1,y1), p2(x2,y2), label(alabel)
 		Line(string alabel, int x1, int y1, int x2, int y2) :  Shape(alabel),p1(x1,y1), p2(x2,y2)
-
 		{
 			cout << "Line's constructor called" << endl;
-
 		}
 
 		~Line()

@@ -1,6 +1,5 @@
-//Demonstrates : Abstract base class. pure virtual function
+// Demonstrates : Abstract base class. pure virtual function
 // Shape is base class. Line and Rectangle inherit from it
- 
 #include <iostream>
 using namespace std;
 

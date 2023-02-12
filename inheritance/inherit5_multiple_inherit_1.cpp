@@ -18,7 +18,6 @@ class Base1
 		}
 };
 
-
 class Base2
 {
 	public:

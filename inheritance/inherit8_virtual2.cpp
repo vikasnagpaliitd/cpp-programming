@@ -1,8 +1,7 @@
 // Demonstrates: Virtual destructor
+// Inheritance hierarchy : C drives from B. B derives from A.
 #include <iostream>
 using namespace std;
-
-// Inheritance hierarchy : C drives from B. B derives from A.
 
 class A
 {

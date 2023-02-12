@@ -1,5 +1,4 @@
 // Demonstrates : Access Modifiers. Line inherits from Shape
- 
 #include <iostream>
 using namespace std;
 
@@ -120,6 +119,8 @@ class Shape // Base class of different shapes
 	}
 	
 	public:
+	//protected:
+	//private:
 	string get_label()
 	{
 		return label;
