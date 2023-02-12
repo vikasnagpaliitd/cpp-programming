@@ -1,4 +1,4 @@
-// Full speciailization
+// Demonstrates: Full speciailization
 #include <iostream>
 using namespace std;
 
@@ -13,6 +13,7 @@ class MyClass
 	}
 };
 
+// Specialize for cases when first argument is int
 template <class Y>
 class MyClass<int, Y>
 {
@@ -20,10 +21,11 @@ class MyClass<int, Y>
 
 	MyClass(int x, Y y)
 	{
-		cout << "FirstSpecializedMyClass: x = " << x << ", y = " << y << endl;
+		cout << "FirstSpecialized MyClass<int, Y>: x = " << x << ", y = " << y << endl;
 	}
 };
 
+// Specialize for cases when second argument is int
 template <class X>
 class MyClass<X, int>
 {
@@ -31,10 +33,11 @@ class MyClass<X, int>
 
 	MyClass(X x, int y)
 	{
-		cout << "SecondSpecializedMyClass: x = " << x << ", y = " << y << endl;
+		cout << "SecondSpecialized MyClass<X, int>: x = " << x << ", y = " << y << endl;
 	}
 };
 
+//Full specialization
 template <>
 class MyClass<string, string>
 {
@@ -46,12 +49,25 @@ class MyClass<string, string>
 	}
 };
 
+//Full specialization
+template <>
+class MyClass<int, int>
+{
+	public:
+
+	MyClass(int x, int y)
+	{
+		cout << "intFullSpecializedMyClass: x = " << x << ", y = " << y << endl;
+	}
+};
+
 int main()
 {
 	MyClass<int, string> m1(10,"world");
 	MyClass<string, int> m2("hello", 999);
 	MyClass<string, string> m3("hello", "world");
 	MyClass<bool, bool> m4(true, false);
+	MyClass<int, int> m5(100,200);
 
 	return 0;
 }

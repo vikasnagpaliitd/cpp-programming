@@ -1,18 +1,18 @@
+// Demonstrates: Multiple type arguments
 #include <iostream>
 #include <sstream>
 using namespace std;
-
-
+ 
+// Concatenate two variables of any data types
 template <class T, class U>
 string func_concat(T a, U b)
 {
-	ostringstream s;
-
-	s << a << b;
-
-	return string(s.str());
+	// ostringstream s;
+	// s << a << b;
+	// return string(s.str());
 }
 
+// Ques: if I wish to pass class XYZ to func_max(), which all operations should class XYZ support?
 
 int main()
 {

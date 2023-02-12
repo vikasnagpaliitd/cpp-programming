@@ -1,4 +1,4 @@
-// Partial speciailization
+// Demonstrates: Partial speciailization
 #include <iostream>
 using namespace std;
 
@@ -13,6 +13,7 @@ class MyClass
 	}
 };
 
+// Specialize for cases when first argument is int
 template <class Y>
 class MyClass<int, Y>
 {
@@ -20,10 +21,11 @@ class MyClass<int, Y>
 
 	MyClass(int x, Y y)
 	{
-		cout << "FirstSpecializedMyClass: x = " << x << ", y = " << y << endl;
+		cout << "FirstSpecialized MyClass<int, Y>: x = " << x << ", y = " << y << endl;
 	}
 };
 
+// Specialize for cases when second argument is int
 template <class X>
 class MyClass<X, int>
 {
@@ -31,7 +33,7 @@ class MyClass<X, int>
 
 	MyClass(X x, int y)
 	{
-		cout << "SecondSpecializedMyClass: x = " << x << ", y = " << y << endl;
+		cout << "SecondSpecialized MyClass<X, int>: x = " << x << ", y = " << y << endl;
 	}
 };
 

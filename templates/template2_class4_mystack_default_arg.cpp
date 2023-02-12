@@ -1,4 +1,4 @@
-//My Stack : gave default value for T too
+//Demonstrates: MyStack : Gave default value for both T and max_stack_len
 #include <iostream>
 using namespace std;
 
@@ -7,19 +7,16 @@ class MyStack
 {
 	private:
 
-	//Removed:static const int max_stack_len; // Class variable (not instance variable)
 	T arr[max_stack_len];
 	int top; //Indicates index tilll which stack is filled
 
 	public:
 
-	//MyStack<T, max_stack_len>() 
-	MyStack() // Ques: should we write MyStack<T, int>
+	MyStack()
 	{
 		top = -1;
 	}
 	
-
 	bool is_empty()
 	{
 		return (top == -1);
@@ -44,21 +41,14 @@ class MyStack
 			throw string("exception:pop in empty stack"); // Normally exception object would be thrown
 
 		return arr[top--];
-
 	}
 };
-
-/* Removed: template <class T>
-const int MyStack<T>::max_stack_len = 3; // Small value so that stack actually can get full
-*/
-
 
 int main()
 {
 	try
 	{
-	 	//MyStack<string> s_stack(); // Ques: will not work. why?
-	 	MyStack<string, 3> s_stack;
+	 	MyStack<string> s_stack; // default value taken for max_stack_len
 	 
 	 	s_stack.push("one");
 	 	s_stack.push("two");
@@ -66,7 +56,9 @@ int main()
 	 	//s_stack.push("four"); // will raise exception as stack full
 	 
 	 
-	 	MyStack<> i_stack; // Note: default values taken for both type and non-type args
+	 	MyStack<> i_stack; // default values taken for both T and max_stack_len
+	 	//MyStack i_stack; // does not compile
+
 	 	i_stack.push(10);
 	 	i_stack.push(20);
 	 	i_stack.push(30);

@@ -1,4 +1,4 @@
-//My Stack
+//Demonstrates: MyStack: non-type argument for giving dimension
 #include <iostream>
 using namespace std;
 
@@ -7,19 +7,17 @@ class MyStack
 {
 	private:
 
-	//Removed:static const int max_stack_len; // Class variable (not instance variable)
+	//Removed:static const int max_stack_len;
 	T arr[max_stack_len];
 	int top; //Indicates index tilll which stack is filled
 
 	public:
 
-	//MyStack<T, max_stack_len>() 
-	MyStack() // Ques: should we write MyStack<T, int>
+	MyStack()
 	{
 		top = -1;
 	}
 	
-
 	bool is_empty()
 	{
 		return (top == -1);
@@ -44,7 +42,6 @@ class MyStack
 			throw string("exception:pop in empty stack"); // Normally exception object would be thrown
 
 		return arr[top--];
-
 	}
 };
 
@@ -57,14 +54,12 @@ int main()
 {
 	try
 	{
-	 	//MyStack<string> s_stack(); // Ques: will not work. why?
 	 	MyStack<string, 3> s_stack;
 	 
 	 	s_stack.push("one");
 	 	s_stack.push("two");
 	 	s_stack.push("three");
 	 	//s_stack.push("four"); // will raise exception as stack full
-	 
 	 
 	 	MyStack<int, 3> i_stack;
 	 	i_stack.push(10);
