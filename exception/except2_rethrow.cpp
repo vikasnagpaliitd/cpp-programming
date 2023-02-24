@@ -1,8 +1,8 @@
+// Demonstrates : rethrow of caught exception
 #include <iostream>
-#include <stdexcept> // Note: defines standard exceptions
 using namespace std;
 
-
+// Class to mark function calls and (exception based) returns
 class Marker
 {
 	string s;
@@ -17,7 +17,6 @@ class Marker
 	{
 		cout << "Destructor for " << s << endl;
 	}
-
 };
 
 void func2()
@@ -30,26 +29,22 @@ void func1()
 {
 	Marker m("func1");
 	try {
-	
-	func2();
+	    func2();
 	}
 	catch(int e)
 	{
 		cout << "func1: caught int exception = " << e << ". doing throw..." << endl;
-		throw;
+		throw; // (re)throw same exception
+		//throw string("hello"); // create and throw a new exception
 	}
-
 }
 
 int main()
 {
 	Marker m("main");
 
-
 	try {
 		func1();
-
-
 	}
 	catch(int e)
 	{
@@ -58,10 +53,6 @@ int main()
 	catch(string e)
 	{
 		cout << "Recieved string exception = " << e << endl;
-	}
-	catch(bool e)
-	{
-		cout << "Recieved bool exception = " << e << endl;
 	}
 	catch(...) // catch all else
 	{

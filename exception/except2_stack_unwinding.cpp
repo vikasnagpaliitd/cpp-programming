@@ -1,8 +1,8 @@
+// Demonstrates : Stack unwinding during exception
 #include <iostream>
-#include <stdexcept> // Note: defines standard exceptions
 using namespace std;
 
-
+// Class to mark function calls and (exception based) returns
 class Marker
 {
 	string s;
@@ -17,7 +17,6 @@ class Marker
 	{
 		cout << "Destructor for " << s << endl;
 	}
-
 };
 
 void func2()
@@ -30,30 +29,18 @@ void func1()
 {
 	Marker m("func1");
 	func2();
-
 }
 
 int main()
 {
 	Marker m("main");
 
-
 	try {
 		func1();
-
-
 	}
 	catch(int e)
 	{
 		cout << "Recieved int exception = " << e << endl;
-	}
-	catch(string e)
-	{
-		cout << "Recieved string exception = " << e << endl;
-	}
-	catch(bool e)
-	{
-		cout << "Recieved bool exception = " << e << endl;
 	}
 	catch(...) // catch all else
 	{

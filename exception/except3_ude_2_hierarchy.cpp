@@ -43,18 +43,18 @@ class InputError : public ApplicationError
 	}
 };
 
-
 int main()
 {
 	try
 	{
-		//throw ApplicationError("Something wrong");
+		throw ApplicationError("Something wrong");
 		//throw InputError("Value of X is out of range");
-		throw ProcessingError("Some Processing went wrong");
+		//throw ProcessingError("Some Processing went wrong");
 	}
 	catch (ApplicationError& app_error)
 	{
 		cout << "Caught ApplicationError (or child): " << app_error.what() << endl;
 	}
 
+    return 0;
 }

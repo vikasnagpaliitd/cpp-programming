@@ -1,4 +1,4 @@
-// does order of catch clauses matter?
+// Destructor of exception object
 #include <iostream>
 #include <exception>
 using namespace std;

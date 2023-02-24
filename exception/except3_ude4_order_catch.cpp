@@ -1,8 +1,7 @@
-// does order of catch clauses matter?
+// Does order of catch clauses matter?
 #include <iostream>
 #include <exception>
 using namespace std;
-
 
 class ApplicationError : public exception
 {
@@ -85,7 +84,6 @@ class StringInputError: public InputError
 	{
 		return what_string.c_str();
 	}
-
 };
 
 int main()

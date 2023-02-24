@@ -64,7 +64,6 @@ class IntInputError: public InputError
 	{
 		return what_string.c_str();
 	}
-
 };
 
 class StringInputError: public InputError
@@ -85,7 +84,6 @@ class StringInputError: public InputError
 	{
 		return what_string.c_str();
 	}
-
 };
 
 int main()
@@ -94,8 +92,8 @@ int main()
 	{
 		//throw ApplicationError("Something wrong");
 		//throw ProcessingError("Some Processing went wrong");
-		//throw IntInputError("Value of int is out of range", 100);
-		throw StringInputError("Length of string is too short", "hello");
+		throw IntInputError("Value of int is out of range", 100);
+		//throw StringInputError("Length of string is too short", "hello");
 	}
 	catch (ApplicationError& app_error)
 	//catch (ApplicationError app_error) // not recommended
@@ -103,4 +101,5 @@ int main()
 		cout << "Caught ApplicationError (or child): " << app_error.what() << endl;
 	}
 
+    return 0;
 }

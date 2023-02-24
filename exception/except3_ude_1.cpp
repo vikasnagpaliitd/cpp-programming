@@ -1,4 +1,4 @@
-// User Defined Exception
+// Demonstrates User Defined Exception
 #include <iostream>
 #include <exception>
 using namespace std;

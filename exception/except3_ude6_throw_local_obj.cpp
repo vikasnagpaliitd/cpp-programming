@@ -115,7 +115,7 @@ void func()
 			
 				// OR
 
-
+    // throw by r-value
 	//throw IntInputError("Value of int is out of range", 100);
 
 }
