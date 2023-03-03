@@ -42,9 +42,8 @@ int main()
 
 	// More ways to call emplace
 	{
-		m1.emplace_hint(m1.end(), make_pair("iii", 200)); // pair
 		m1.emplace_hint(m1.end(), piecewise_construct, forward_as_tuple(5,'j'), forward_as_tuple(10)); //piecewise calling constructors
-		cout << "After emplace iii and jjjjj..." << endl;
+		cout << "After emplace jjjjj..." << endl;
 		print("m1", m1);
 	}
 

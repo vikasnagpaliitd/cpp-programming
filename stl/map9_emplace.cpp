@@ -47,9 +47,8 @@ int main()
 
 	// More ways to call emplace
 	{
-		auto [it, status] = m1.emplace(make_pair("ff1", 200)); // pair
 		auto [it1, status1] = m1.emplace(piecewise_construct, forward_as_tuple(5,'g'), forward_as_tuple(10)); //piecewise calling constructors
-		cout << "After emplace ff1 and ggggg..." << endl;
+		cout << "After emplace ggggg..." << endl;
 		//print_it_status(it, status);
 		print("m1", m1);
 	}

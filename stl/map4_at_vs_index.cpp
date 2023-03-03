@@ -13,7 +13,8 @@ void print(string name, const M& m)
 
 int main()
 {
-	map<string, int> m1;
+	//map<string, int> m1;
+	map<string, int, greater<string>> m1;
 
 	m1["Abc2"] = 2;
 	m1["Abc1"] = 1;
@@ -21,8 +22,8 @@ int main()
 	m1["Abc3"] = 3;
 
 	cout << "m1.at(Abc9) = " << m1.at("Abc9") << endl;
-	cout << "m1.at(Abc19) = " << m1.at("Abc19") << endl; // std::out_of_range
-	//cout << "m1[Abc19] = " << m1["Abc19"] << endl; // Note: inserted
+	//cout << "m1.at(Abc19) = " << m1.at("Abc19") << endl; // std::out_of_range
+	cout << "m1[Abc19] = " << m1["Abc19"] << endl; // Note: inserted
 
 	print("m1", m1);
 

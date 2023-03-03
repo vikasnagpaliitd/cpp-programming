@@ -15,7 +15,7 @@ void print(const T& cnt)
 int main()
 {
 	list<int> l1 = {10,20,30,40,60};
-	list<int> l2 = {51,52,53,53,54};
+	list<int> l2 = {51,52,53,54,55};
 
 	cout << "l1 : " << endl;
 	print(l1);

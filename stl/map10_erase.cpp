@@ -35,5 +35,9 @@ int main()
 	cout << "after erasing fff as key..." << endl;
 	print("m1", m1);
 
+	m1.erase("fff"); // erase using key
+	cout << "after erasing fff again as key..." << endl;
+	print("m1", m1);
+
 	return 0;
 }

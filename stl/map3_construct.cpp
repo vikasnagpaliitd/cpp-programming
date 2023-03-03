@@ -6,7 +6,7 @@ template <class M>
 void print(string name, const M& m)
 {
 	cout << name << endl;
-	for(auto i:m)
+	for(const auto& i:m)
 		cout << i.first << " " << i.second << endl;
 	cout << endl;
 }
@@ -23,9 +23,11 @@ int main()
 	auto it1 = m1.find("Abc2");
 	auto it2 = m1.find("Abc9");
 
-	//it1++; // ok
+	it1++; // ok
+	it1--; // ok
+
 	map<string, int> m2(it1, it2);
-	///map<string, int> m2(it1+1, it2);// does not compile
+	//map<string, int> m2(it1+1, it2);// does not compile
 
 	print("m1", m1);
 	print("m2", m2);
