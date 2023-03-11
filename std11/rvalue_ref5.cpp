@@ -29,6 +29,7 @@ void func2(Point& p)
 	p.display("func2(Point&)");
 }
 
+//void func1(const Point&& p) // not very useful normally
 void func1(Point&& p)
 {
 	p.display("func1(Point&&)");

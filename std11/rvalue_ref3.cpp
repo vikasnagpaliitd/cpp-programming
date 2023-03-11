@@ -1,7 +1,6 @@
-//overloading based on rvalue ref vs lvalue ref 
+//overloading based on argument being rvalue vs lvalue 
 #include <iostream>
 using namespace std;
-
 
 class Point
 {
@@ -28,7 +27,7 @@ void func1(Point&& p)
 #endif
 
 #if 1
-void func1(Point& p) // Ques: can we modify the prototype so that temporary objects also get passed?
+void func1(const Point& p) // Ques: can we modify the prototype so that temporary objects also get passed?
 {
 	p.display("func1(Point&)");
 }
@@ -36,7 +35,7 @@ void func1(Point& p) // Ques: can we modify the prototype so that temporary obje
 
 int main()
 {
-	func1(Point(9,9));
+	func1(Point(9,9)); // Ques: what if func(Point&&) is not defined?
 
 	Point p1(1,1);
 	func1(p1);

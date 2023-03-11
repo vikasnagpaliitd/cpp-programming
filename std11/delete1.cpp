@@ -4,16 +4,27 @@ using namespace std;
 
 struct Foo
 {
-	Foo(int n):val(n) // add 'explcit' if you want it to be not used as conversion ctor
+	Foo(int n):val(n)
 	{
 		cout << "Foo(int) called" << endl;
 	}
-	Foo() = delete;
-	Foo(const Foo& other) = delete;
-	Foo(Foo&& other) = delete;
-	Foo& operator=(const Foo& other) = delete;
-	Foo& operator=(const Foo&& other) = delete;
-	~Foo() = delete;
+	//Foo() = delete;
+	Foo() = default;
+
+	//Foo(const Foo& other) = delete;
+	Foo(const Foo& other) = default;
+
+	//Foo(Foo&& other) = delete;
+	Foo(Foo&& other) = default;
+
+	//Foo& operator=(const Foo& other) = delete;
+	Foo& operator=(const Foo& other) = default;
+
+	//Foo& operator=(Foo&& other) = delete;
+	Foo& operator=(Foo&& other) = default;
+
+	//~Foo() = delete;
+	~Foo() = default;
 
 	int val;
 };
@@ -21,17 +32,19 @@ struct Foo
 
 int main()
 {
-	//Foo obj = 5;		// Deleted Move constructor prohibits this;
+	Foo obj1 = 5;
 	Foo obj(5);
 	cout << "obj.val = " << obj.val << endl;
 
-	//Foo xyz(obj)l // Deleted copy constructor prohibits this;
+	Foo xyz(obj);
 
 	Foo obj2(10);
+  Foo obj3;
 
-	//obj2 = obj;//error: use of deleted function ‘Foo& Foo::operator=(const Foo&)'
-	//obj2 = move(obj);//error: use of deleted function ‘Foo& Foo::operator=(const Foo&&)’
+	//obj2 = obj;
+	obj2 = move(obj);//error: use of deleted function ‘Foo& Foo::operator=(const Foo&&)’
 
+  Foo obj4(move(obj));
 	return 0;
 }
 

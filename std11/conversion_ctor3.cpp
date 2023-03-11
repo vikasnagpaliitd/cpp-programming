@@ -1,5 +1,5 @@
 //Conversion ctor can have other args having default values
-// After std11, conversion constructor can also convert from initializer list
+// After c++11, conversion constructor can also convert from initializer list
 #include <iostream>
 using namespace std;
 
@@ -8,7 +8,7 @@ struct Foo
 {
 	Foo(int n, float f=2.3, char c='r'):val(n)
 	{
-		cout << "Foo(int) called" << endl;
+		cout << "Foo() called. n = " << n << ", f=" << f << ",c="<< c << endl;
 	}
 	int val;
 };

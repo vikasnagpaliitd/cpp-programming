@@ -21,7 +21,7 @@ class Point
 int main()
 {
 
-	//Point p1(3,4);
+	Point p1(3,4);
 	//Point&& rvref1 = p1; // does not compile
 
 	Point&& rvref1 = Point(5,6); // Object lives till the reference goes out of scope
@@ -30,6 +30,7 @@ int main()
 	Point& ref2 = rvref1; // It does compile! rvref1 is an lvalue. All named variables are so.
 	cout << "rvref1 = " << &rvref1 << endl;
 	cout << "cref  = " << &cref << endl;
+	cout << "ref2  = " << &ref2 << endl;
 	rvref1.set_values(11,12);
 	rvref1.display("rvref1");
 	cref.display("cref");

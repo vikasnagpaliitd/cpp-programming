@@ -19,6 +19,7 @@ class Point
 		cout << "Constructor:Point: label = " << label << ", x = " << x << ", y = " << y << endl;
 	}
 
+  // Copy Constructor
 	Point(const Point& other) : x(other.x), y(other.y)
 	{
 		label = new char[strlen(other.label)+1];
@@ -27,8 +28,10 @@ class Point
 		cout << "Copy Constructor:Point: label = " << label << ", x = " << x << ", y = " << y << endl;
 	}
 
-	// Move constructor : note: 'other' can not be const rvalue ref
+	// Move constructor
+  // Note: 'other' can not be const rvalue ref
 	// Ques : What happens if move constructor is not defined?
+#if 1
 	Point(Point&& other) : x(other.x), y(other.y) //Better conventional way : std::move
 	{
 		label = other.label;
@@ -37,6 +40,7 @@ class Point
 		
 		cout << "Move Constructor:Point: label = " << label << ", x = " << x << ", y = " << y << endl;
 	}
+#endif
 
 	void display(string name) const { cout << "Display:Point: " << name << ":label = " << label << ", x = " << x << ", y = " << y << endl;}
 	void set_values(int ax, int ay) { 
@@ -61,16 +65,17 @@ void func(Point p)
 
 int main()
 {
-	// Copy Constructor
 	Point p("abc", 10,10);
+
+	// Copy Constructor while passing argument
 	func(p);
 
-	//func(std::move(p)); // concept of a moved-from object
+	//func(std::move(p)); // Move constructor while passing argument
 
 	cout << endl << endl;
 
 	// Move Constructor
-	func(Point("xyz", 11,11)); // Note:Please use -fno-elide-constructors
+	func(Point("xyz", 11,11)); // Move constructor while passing argument
 
     return 0;
 }

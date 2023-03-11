@@ -1,4 +1,4 @@
-// explcit keyword
+// explcit keyword. Reverse typecast from object to int
 #include <iostream>
 using namespace std;
 
@@ -10,8 +10,8 @@ struct Foo
 		cout << "Foo(int) called" << endl;
 	}
 
-	//operator int()
-	explicit operator int()
+	operator int()
+	//explicit operator int()
 	{
 		cout << "operator int() called" << endl;
 		return val*100;
@@ -23,6 +23,7 @@ struct Foo
 Foo create()
 {
 	return (Foo) 5;	// Notice type casting style syntax
+	//return Foo(5);	// Ctor call style syntax
 }
 
 int main()
@@ -34,8 +35,9 @@ int main()
 
 	cout << "obj.val = " << obj.val << endl;
 
+  x = obj;
 	//x = (int)obj;
-	x = int(obj);
+	//x = int(obj);
 	cout << "x = " << x << endl;
 
 	return 0;
