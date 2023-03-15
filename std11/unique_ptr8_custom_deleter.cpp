@@ -1,4 +1,4 @@
-// can we pass unique pointer to function
+// Custom Deleter
 #include <iostream>
 #include <memory>
 using namespace std;
@@ -21,7 +21,6 @@ void mydeleter_func(T *ptr)
 		cout << "mydeleter_func" << endl;
 		delete ptr;
 }
-
 
 class Matrix
 {
@@ -46,7 +45,6 @@ int main()
 
 	uptr1->display();
 	uptr2->display();
-
 
 	return 0;
 }

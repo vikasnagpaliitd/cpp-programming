@@ -22,6 +22,7 @@ int main()
 	m1.display();
 	sptr1->display(); //operator->
 	cout << "sptr1.use_count() = " << sptr1.use_count() << endl;
+	//sptr1[0].display(); // will not compile
 
 
 

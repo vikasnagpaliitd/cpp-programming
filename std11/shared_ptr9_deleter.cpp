@@ -14,6 +14,18 @@ class Matrix
 
 };
 
+template<class T>
+class MyDeleter
+{
+	public:
+	int data;
+	void operator() (T *ptr)
+	{
+		cout << "MyDeleter" << endl;
+		delete ptr;
+	}
+};
+
 void my_deleter(Matrix *ptr)
 {
 	cout << "my custom deleter" << endl;
@@ -23,7 +35,8 @@ void my_deleter(Matrix *ptr)
 int main()
 {
 
-	shared_ptr<Matrix> sptr1(new Matrix(6,6), my_deleter);
+	//shared_ptr<Matrix> sptr1(new Matrix(6,6), my_deleter);
+	shared_ptr<Matrix> sptr1(new Matrix(6,6), MyDeleter<Matrix>());
 	//shared_ptr<Matrix> sptr1 = make_shared<Matrix>(6,6); // make_shared does not allow custom deleter
 	cout << "main:sptr1.use_count() = " << sptr1.use_count() << endl;
 

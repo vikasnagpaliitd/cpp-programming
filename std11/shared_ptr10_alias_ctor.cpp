@@ -1,4 +1,4 @@
-// Should we have reference OR pointer to shared pointers? No. rather use raw pointers using .get()
+// We might store an internal pointer into a managed object. .get() returns internal pointer. Destructor deletes the object start pointer
 #include <iostream>
 #include <memory>
 using namespace std;
@@ -21,10 +21,13 @@ int main()
 	shared_ptr<Matrix> sptr1(new Matrix(6,7));
 
 	shared_ptr<int> ptr_to_member(sptr1, &(sptr1->x));
-	//shared_ptr<Matrix> sptr1 = make_shared<Matrix>(6,6); // make_shared does not allow custom deleter
-	cout << "main:sptr1.use_count() = " << sptr1.use_count() << endl;
 
-	cout << *ptr_to_member << endl;
+	cout << "main:sptr1.use_count() = " << sptr1.use_count() << endl;
+	cout << "*ptr_to_member = " << *ptr_to_member << endl;
+
+  cout << "&(sptr1->x) = " << &(sptr1->x) << endl;
+	cout << "ptr_to_member = " << ptr_to_member << endl;
+	cout << "sptr1.get()" << sptr1.get() << endl;
 
 	return 0;
 }

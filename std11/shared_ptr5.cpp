@@ -17,7 +17,11 @@ class Matrix
 int main()
 {
 	//shared_ptr<Matrix[]> sptr1(new Matrix[3]);
-	shared_ptr<Matrix[]> sptr1 = make_shared<Matrix[]>(3);
+	//shared_ptr<Matrix[3]> sptr1(new Matrix[3]);
+  Matrix def;
+	//shared_ptr<Matrix[]> sptr1 = make_shared<Matrix[]>(3);
+	//shared_ptr<Matrix[3]> sptr1 = make_shared<Matrix[3]>();
+	shared_ptr<Matrix[3]> sptr1 = make_shared<Matrix[3]>(def);
 
 	cout << "sptr1.use_count() = " << sptr1.use_count() << endl;
 
