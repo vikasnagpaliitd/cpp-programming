@@ -1,4 +1,4 @@
-// Basics. use_count. expired. No -> . No *
+// Basics of weak_ptr. use_count. expired. No -> or *
 #include <iostream>
 #include <memory>
 using namespace std;
@@ -36,6 +36,7 @@ int main()
 	cout << "Outside: wptr1.expired() = " << boolalpha << wptr1.expired() << endl;
 
     //wptr1->display(); // does not compile
+    //*wptr1; // does not compile
 
 	return 0;
 }

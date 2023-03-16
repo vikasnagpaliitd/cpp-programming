@@ -18,14 +18,13 @@ class Matrix
 int main()
 {
 
-	weak_ptr<Matrix> wptr1;
 
 	shared_ptr<Matrix> sptr1 = make_shared<Matrix>(6,6);
-	wptr1 = sptr1;
+	weak_ptr<Matrix> wptr1(sptr1);
 
-	shared_ptr<Matrix>ret_sptr;	
-	ret_sptr= wptr1.lock(); // Gain access to managed object
-	if(ret_sptr) // Best is to check. object may or may not be alive at time of call of lock()
+	shared_ptr<Matrix> ret_sptr;	
+	ret_sptr = wptr1.lock(); // Gain access to managed object
+	if(ret_sptr) // Should check. object may or may not be alive at time of call of lock()
 	{
 		cout<< "ret_sptr->x == " << ret_sptr->x << endl;
 		cout<< "ret_sptr.use_count() == " << ret_sptr.use_count() << endl;
