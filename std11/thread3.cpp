@@ -15,7 +15,8 @@ int main()
 {
 	int abc = 10;
 	int xyz = 20;
-	thread t1(thread_func, abc, ref(xyz));
+	//thread t1(thread_func, abc, ref(xyz));
+	thread t1(thread_func, abc, xyz); // compilation error.
 	cout << "main thread: executing ..." << endl;
 
 	t1.join();

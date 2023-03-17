@@ -30,13 +30,13 @@ void producer_func()
 
     while (produced < NUM_PRODUCTS)
     {
-		sleep_a_little();
-		product_mutex.lock();
-		products.push_back(produced);
-		product_mutex.unlock();
-		//product_produced_condition.notify_one();
-		product_produced_condition.notify_all();
-		produced++;
+				sleep_a_little();
+				product_mutex.lock();
+				products.push_back(produced);
+				product_mutex.unlock();
+				//product_produced_condition.notify_one();
+				product_produced_condition.notify_all();
+				produced++;
     }
 
 	cout << "producer_func : completed..." << endl;
@@ -54,19 +54,19 @@ void consumer_func(int id)
     //while (! products.empty())
     while (1)
     {
-		unique_lock<mutex> lock(product_mutex);
-		product_produced_condition.wait(lock);
-		// Note: when we come here, we hold the mutex locked
-		if (! products.empty())
-		{
-			product = products.back();
-			products.pop_back();
-			cout << "consumer_func " << id << " : consumed product " << product << endl;
-		}
-		else
-			cout << "consumer_func " << id << " : spurious wakeup" << endl;
-		//product_mutex.unlock();
-		//sleep_a_little();
+				unique_lock<mutex> lock(product_mutex);
+				product_produced_condition.wait(lock);
+				// Note: when we come here, we hold the mutex locked
+				if (! products.empty())
+				{
+					product = products.back();
+					products.pop_back();
+					cout << "consumer_func " << id << " : consumed product " << product << endl;
+				}
+				else
+					cout << "consumer_func " << id << " : spurious wakeup" << endl;
+				//product_mutex.unlock();
+				//sleep_a_little();
 
     }
 
