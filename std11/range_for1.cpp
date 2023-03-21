@@ -14,17 +14,17 @@ int main()
 	map<string, int> m1 = { {"Ram", 10}, {"Shyam", 12}};
 
 	cout << "list:" << endl;
-	for (auto i : l1) // Note: can use int. can use reference
+	for (auto i : l1) // Can use int or auto. Can also apply &(reference) and const
 		cout << i << " ";
 	cout << endl;
 
 	cout << "vector:" << endl;
-	for (auto i : v1) // Note: can use int. can use reference
+	for (auto i : v1) 
 		cout << i << " ";
 	cout << endl;
 
-	cout << "array:" << endl;
-	for (auto i : arr) // Note: can use int. can use reference
+	cout << "array:" << endl; // works with array
+	for (auto i : arr) 
 		cout << i << " ";
 	cout << endl;
 
@@ -40,8 +40,8 @@ int main()
 void func(int arr[])
 {
 	cout << "array:" << endl;
-	//for (auto i : arr) // will not work here 
-	//	cout << i << " ";
+	//for (auto i : arr) // range-for will not work here 
+	//  cout << i << " ";
 	cout << endl;
 
 }

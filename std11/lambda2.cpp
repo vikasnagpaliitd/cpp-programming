@@ -19,13 +19,13 @@ int main()
 
 	int sum=0;
 
+	//for_each(v1.begin(), v1.end(), [](const auto& x) {sum += x;});  // Error: sum is not captured
+	//for_each(v1.begin(), v1.end(), [sum](const auto& x) {sum += x;});  // Error: assignment of read-only variable ‘sum’
+	for_each(v1.begin(), v1.end(), [&sum](const auto& x) {sum += x;});  // Works
+	//for_each(v1.begin(), v1.end(), [=](const auto& x) {sum += x;});  // Error:
+	//for_each(v1.begin(), v1.end(), [&](const auto& x) {sum += x;});  // Works
 
-	//for_each(v1.begin(), v1.end(), [](auto& x) {sum+= x;});  // does not compile
-	//for_each(v1.begin(), v1.end(), [sum](auto& x) {sum+= x;});  // does not compile
-	for_each(v1.begin(), v1.end(), [&sum](auto& x) {sum+= x;});  // does not compile
 	cout << "sum = " << sum << endl;
-
-
 
 	return 0;
 }
