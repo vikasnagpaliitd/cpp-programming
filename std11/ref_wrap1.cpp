@@ -14,7 +14,6 @@ void f(int& n1, int& n2, const int& n3)
 int main()
 {
     int n1 = 1, n2 = 2, n3 = 3;
-    // std::function<void()> bound_f = std::bind(f, n1, std::ref(n2), std::cref(n3));
     std::function<void()> bound_f = std::bind(f, n1, std::ref(n2), std::cref(n3));
     n1 = 10;
     n2 = 11;
@@ -22,4 +21,5 @@ int main()
     std::cout << "Before function: " << n1 << ' ' << n2 << ' ' << n3 << '\n';
     bound_f();
     std::cout << "After function: " << n1 << ' ' << n2 << ' ' << n3 << '\n';
+    return 0;
 }
